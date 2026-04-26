@@ -39,13 +39,17 @@
 
     <main id="main">
       <section class="hero">
-        <div class="hero__bg" aria-hidden="true"></div>
+        <div
+          class="hero__bg hero__bg--photo"
+          aria-hidden="true"
+          style="background-image: url('/images/interior-front.png')"
+        ></div>
         <div class="inner hero__content">
-          <p class="eyebrow">Opening soon · Neighborhood café</p>
-          <h1>Coffee, breakfast, and a place to slow down.</h1>
+          <p class="eyebrow">Allstar Eateries</p>
+          <h1>Great coffee, savory bites, and loaded donuts.</h1>
           <p class="lede">
-            Replace this line with your story — what makes your café different,
-            who you serve, and why people should visit.
+            Fresh drinks, quick comfort food, and a welcoming space in the
+            neighborhood. Stop in, relax, and fuel up.
           </p>
           <div class="hero__actions">
             <a class="btn" href="#visit">Hours &amp; location</a>
@@ -68,8 +72,8 @@
               policy, or anything else that sets expectations.
             </p>
           </div>
-          <div class="card card--photo" role="img" aria-label="Placeholder for café interior photo">
-            <span>Photo: interior or signature dish</span>
+          <div class="card card--photo">
+            <img src="/images/interior-counter.png" alt="Allstar Eateries dining area and counter" />
           </div>
         </div>
       </section>
@@ -113,6 +117,17 @@
         </div>
       </section>
 
+      <section class="section section--alt">
+        <div class="inner">
+          <h2>From our kitchen</h2>
+          <div class="photo-grid" aria-label="Food and café photos">
+            <img src="/images/chicken-wings.png" alt="Chicken wings with dipping sauce" />
+            <img src="/images/fries-classic.png" alt="French fries with ketchup" />
+            <img src="/images/allstar-combo-box.png" alt="Allstar combo box with wings, fries, and nachos" />
+          </div>
+        </div>
+      </section>
+
       <section id="visit" class="section section--alt">
         <div class="inner split split--reverse">
           <div>
@@ -133,8 +148,8 @@
               URL changes.
             </p>
           </div>
-          <div class="card card--map" aria-hidden="true">
-            <span>Map embed or exterior photo</span>
+          <div class="card card--map">
+            <img src="/images/interior-side.png" alt="Inside seating at Allstar Eateries" />
           </div>
         </div>
       </section>
