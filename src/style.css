@@ -429,6 +429,19 @@ a:hover {
   gap: 1.5rem;
 }
 
+.menu-posters {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.menu-posters img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  box-shadow: var(--shadow);
+}
+
 .photo-grid {
   display: grid;
   gap: 1rem;
@@ -446,6 +459,10 @@ a:hover {
 @media (min-width: 720px) {
   .menu-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-posters {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .photo-grid {
@@ -558,6 +575,64 @@ a:hover {
 
 .contact-list a:hover {
   text-decoration: underline;
+}
+
+.social-buttons {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 22px rgba(28, 25, 23, 0.16);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.social-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(28, 25, 23, 0.2);
+  filter: brightness(1.05);
+}
+
+.social-icon {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.social-btn--instagram {
+  background: linear-gradient(135deg, #fd5949, #d6249f 45%, #285aeb);
+}
+
+.social-btn--facebook {
+  background: #1877f2;
+}
+
+.social-btn--tiktok {
+  background: #111;
 }
 
 .site-footer {
