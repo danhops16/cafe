@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Allstar Eateries — Home</title>
+    <meta
+      name="description"
+      content="Allstar Eateries in Windsor — premium coffee, loaded donuts, African comfort food, nachos, and pepper soups. Open daily 6 AM to midnight."
+    />
+    <title>Allstar Eateries — Coffee, Comfort Food &amp; African Flavours</title>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
+
+    <header class="site-header" id="site-header">
       <div class="inner">
         <a class="logo" href="/">Allstar Eateries</a>
         <button
@@ -24,206 +29,230 @@
           aria-expanded="false"
           aria-controls="site-nav"
         >
-          <span class="sr-only">Menu</span>
+          <span class="sr-only">Open menu</span>
           <span class="nav-toggle-bar"></span>
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="/menu.html">Menu</a></li>
-            <li><a href="#" data-order-online>Order online</a></li>
             <li><a href="#visit">Visit</a></li>
-            <li><a class="btn btn--small" href="#contact">Contact</a></li>
+            <li><a class="btn btn--small" href="#" data-order-online>Order online</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero">
+      <section class="hero" aria-label="Welcome">
         <div
-          class="hero__bg hero__bg--photo"
+          class="hero__bg"
+          style="background-image: url('/images/interior-counter.png')"
           aria-hidden="true"
-          style="background-image: url('/images/interior-front.png')"
         ></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
         <div class="inner hero__content">
-          <p class="eyebrow">Allstar Eateries</p>
-          <h1>Coffee, comfort food, African cuisine, and loaded donuts.</h1>
-          <p class="lede">
-            Premium coffee, hearty plates, pepper soups, nachos, and fresh
-            baked favorites — dine in or order online for pickup.
+          <p class="eyebrow">Windsor, Ontario</p>
+          <h1>Coffee, Comfort Food &amp; African Flavours in Windsor</h1>
+          <p class="hero__lede">
+            From premium coffee and loaded donuts to spicy pepper soups, jollof
+            rice, and cheesy loaded nachos — Allstar Eateries is your neighbourhood
+            spot for bold flavours and warm hospitality.
           </p>
           <div class="hero__actions">
-            <a class="btn" href="#" data-order-online>Order online</a>
-            <a class="btn btn--ghost" href="#visit">Hours &amp; location</a>
-            <a class="btn btn--ghost" href="/menu.html">See the menu</a>
+            <a class="btn btn--light" href="/menu.html">View menu</a>
+            <a
+              class="btn btn--ghost"
+              href="https://www.google.com/maps/search/?api=1&amp;query=4739+Wyandotte+Street+E,+Windsor,+ON+N8Y+1H8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Get directions</a>
+            <a class="btn btn--ghost" href="#" data-order-online>Order online</a>
           </div>
+        </div>
+      </section>
+
+      <section id="popular" class="section">
+        <div class="inner">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Customer favourites</p>
+            <h2>Popular picks</h2>
+            <p>Start with these bestsellers — available for dine-in and pickup.</p>
+          </div>
+          <div class="food-grid food-grid--3">
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/chicken-tender-meal.png" alt="Crispy chicken tender with cheesy wedges" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Chicken Tender Combo</h3>
+                <p>Crispy tenders, cheesy wedges, dipping sauce, and a drink.</p>
+                <span class="food-card__price">$8.99</span>
+              </div>
+            </article>
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/buffalo-chicken-nachos.png" alt="Buffalo chicken loaded nachos" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Buffalo Chicken Nachos</h3>
+                <p>Loaded nachos with buffalo chicken, cheese, and all the fixings.</p>
+                <span class="food-card__price">$13.50</span>
+              </div>
+            </article>
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/jollof-rice-plate.png" alt="Jollof rice with plantains and chicken" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Jollof Rice Plate</h3>
+                <p>Jollof rice with fried plantains, fresh salad, and grilled chicken.</p>
+                <span class="food-card__price">$14.99</span>
+              </div>
+            </article>
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/egusi-soup-fufu.png" alt="Egusi soup with fufu" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Egusi Soup &amp; Fufu</h3>
+                <p>Rich egusi stew served with smooth fufu — warm bowls, bigger smiles.</p>
+                <span class="food-card__price">$11.50</span>
+              </div>
+            </article>
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/iced-lattes.png" alt="Vanilla and caramel iced lattes" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Iced Lattes</h3>
+                <p>Vanilla or caramel — cool, creamy, and perfect any time of day.</p>
+              </div>
+            </article>
+            <article class="food-card">
+              <div class="food-card__media">
+                <img src="/images/promos/catfish-pepper-soup.png" alt="Cat fish pepper soup" loading="lazy" />
+              </div>
+              <div class="food-card__body">
+                <h3>Cat Fish Pepper Soup</h3>
+                <p>Bold spices, rich broth, and authentic West African heat.</p>
+                <span class="food-card__price">$16.50</span>
+              </div>
+            </article>
+          </div>
+          <p style="text-align: center; margin-top: 2.5rem">
+            <a class="btn" href="/menu.html">See full menu</a>
+          </p>
         </div>
       </section>
 
       <section id="about" class="section section--alt">
         <div class="inner split">
-          <div>
-            <h2>About us</h2>
-            <p>
-              Allstar Eateries is your neighborhood spot in Windsor for premium
-              coffee, loaded donuts, African cuisine, pepper soups, and savory
-              comfort food made to satisfy any craving.
-            </p>
-            <p>
-              Whether you are grabbing a quick drink, meeting friends, or
-              stopping in for a late-night bite, we focus on friendly service,
-              fresh flavors, and a welcoming space every day from 6 AM to
-              midnight.
-            </p>
+          <div class="split__media split__media--poster">
+            <img src="/images/promos/allstar-brand.png" alt="All Star premium coffee and freshly baked goods" loading="lazy" />
           </div>
-          <div class="card card--photo card--poster">
-            <img src="/images/promos/allstar-brand.png" alt="All Star premium coffee and freshly baked goods — Fuel for Champions" />
+          <div class="split__content">
+            <p class="eyebrow">About Allstar</p>
+            <h2>Your neighbourhood café &amp; kitchen</h2>
+            <p>
+              Allstar Eateries is where Windsor comes for great coffee in the
+              morning, loaded donuts by afternoon, and hearty African comfort
+              food late into the night.
+            </p>
+            <p>
+              We blend café culture with bold kitchen flavours — pepper soups,
+              jollof plates, nachos, wings, and fresh-baked treats — all served
+              with friendly, unhurried hospitality in a space that feels like home.
+            </p>
+            <p>Open daily from 6:00 AM to midnight.</p>
           </div>
         </div>
       </section>
 
-      <section id="featured" class="section section--alt">
+      <section id="why" class="section section--dark">
         <div class="inner">
-          <h2>Featured favorites</h2>
-          <p class="section__intro">
-            Customer favorites from our kitchen — order for pickup when you are ready.
-          </p>
-          <div class="featured-grid">
-            <figure class="featured-card featured-card--landscape">
-              <img src="/images/promos/chicken-tender-meal.png" alt="Crispy chicken tender with cheesy wedges combo for $8.99" loading="lazy" />
-              <figcaption>
-                <strong>Chicken Tender Combo</strong>
-                <span class="price">$8.99</span>
-              </figcaption>
-            </figure>
-            <figure class="featured-card featured-card--landscape">
-              <img src="/images/promos/buffalo-chicken-nachos.png" alt="Buffalo chicken loaded nachos for $13.50" loading="lazy" />
-              <figcaption>
-                <strong>Buffalo Chicken Nachos</strong>
-                <span class="price">$13.50</span>
-              </figcaption>
-            </figure>
-            <figure class="featured-card featured-card--landscape">
-              <img src="/images/promos/catfish-pepper-soup.png" alt="Cat fish pepper soup for $16.50" loading="lazy" />
-              <figcaption>
-                <strong>Cat Fish Pepper Soup</strong>
-                <span class="price">$16.50</span>
-              </figcaption>
-            </figure>
-            <figure class="featured-card featured-card--portrait">
-              <img src="/images/promos/iced-lattes.png" alt="Vanilla and caramel iced lattes" loading="lazy" />
-              <figcaption>
-                <strong>Iced Lattes</strong>
-                <span>Cool, creamy, and irresistible.</span>
-              </figcaption>
-            </figure>
-            <figure class="featured-card featured-card--portrait">
-              <img src="/images/promos/jollof-rice-plate.png" alt="Jollof rice with fried plantains, salad, and chicken for $14.99" loading="lazy" />
-              <figcaption>
-                <strong>Jollof Rice Plate</strong>
-                <span class="price">$14.99</span>
-              </figcaption>
-            </figure>
-            <figure class="featured-card featured-card--portrait">
-              <img src="/images/promos/egusi-soup-fufu.png" alt="Egusi soup and fufu for $11.50" loading="lazy" />
-              <figcaption>
-                <strong>Egusi Soup &amp; Fufu</strong>
-                <span class="price">$11.50</span>
-              </figcaption>
-            </figure>
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Why visit us</p>
+            <h2>More than a quick bite</h2>
+            <p>Three reasons locals keep coming back to Allstar Eateries.</p>
           </div>
-          <p class="featured-cta">
-            <a class="btn" href="#" data-order-online>Order online for pickup</a>
-          </p>
+          <div class="why-grid">
+            <article class="why-card">
+              <div class="why-card__icon" aria-hidden="true">☕</div>
+              <h3>Fresh coffee &amp; drinks</h3>
+              <p>Premium coffee, French vanilla, lattes, mochas, and iced favourites made to order.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-card__icon" aria-hidden="true">🍲</div>
+              <h3>African comfort food</h3>
+              <p>Authentic pepper soups, jollof rice, egusi, fufu, and loaded savoury plates.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-card__icon" aria-hidden="true">⚡</div>
+              <h3>Quick pickup &amp; casual dining</h3>
+              <p>Grab-and-go when you are in a rush, or stay and relax in our welcoming dining space.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section">
+      <section id="gallery" class="section">
         <div class="inner">
-          <h2>Inside Allstar</h2>
-          <div class="photo-grid" aria-label="Restaurant photos">
-            <img src="/images/interior-front.png" alt="Allstar Eateries storefront and dining area" loading="lazy" />
-            <img src="/images/donut-classic.png" alt="Gourmet and loaded donuts menu" loading="lazy" />
-            <img src="/images/chicken-wings.png" alt="Chicken wings with dipping sauce" loading="lazy" />
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Inside Allstar</p>
+            <h2>A look inside</h2>
+            <p>Warm lighting, fresh food, and a space built for everyday moments.</p>
+          </div>
+          <div class="gallery" aria-label="Restaurant photo gallery">
+            <img src="/images/interior-front.png" alt="Allstar Eateries dining area and storefront" loading="lazy" />
+            <img src="/images/interior-side.png" alt="Comfortable seating inside Allstar Eateries" loading="lazy" />
+            <img src="/images/chicken-wings.png" alt="Fresh chicken wings with dipping sauce" loading="lazy" />
           </div>
         </div>
       </section>
 
       <section id="visit" class="section section--alt">
-        <div class="inner split split--reverse">
-          <div>
-            <h2>Visit</h2>
-            <dl class="hours">
-              <div>
-                <dt>Daily</dt>
-                <dd>6:00 AM - 12:00 AM</dd>
+        <div class="inner">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Visit us</p>
+            <h2>Find us on Wyandotte</h2>
+            <p>East Windsor — dine in, call ahead, or order online for pickup.</p>
+          </div>
+          <div class="location-card">
+            <div class="location-card__map">
+              <img src="/images/interior-front.png" alt="Allstar Eateries on Wyandotte Street East" loading="lazy" />
+            </div>
+            <div class="location-card__info">
+              <h2>Allstar Eateries</h2>
+              <ul class="location-list">
+                <li>
+                  <strong>Address</strong>
+                  <span>4739 Wyandotte Street E<br />Windsor, ON N8Y 1H8</span>
+                </li>
+                <li>
+                  <strong>Hours</strong>
+                  <span>Daily · 6:00 AM – 12:00 AM</span>
+                </li>
+                <li>
+                  <strong>Phone</strong>
+                  <a href="tel:+15199445534">(519) 944-5534</a>
+                </li>
+                <li>
+                  <strong>Email</strong>
+                  <a href="mailto:allstarinc2026@gmail.com">allstarinc2026@gmail.com</a>
+                </li>
+              </ul>
+              <div class="location-card__actions">
+                <a
+                  class="btn"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=4739+Wyandotte+Street+E,+Windsor,+ON+N8Y+1H8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Get directions</a>
+                <a class="btn btn--outline" href="tel:+15199445534">Call us</a>
+                <a class="btn btn--outline" href="#" data-order-online>Order online</a>
               </div>
-            </dl>
-            <address class="address">
-              4739 Wyandotte Street E<br />
-              Windsor, ON N8Y 1H8
-            </address>
-            <p class="fineprint">
-              Located in East Windsor on Wyandotte Street. Dine in, relax, and
-              enjoy your favorites all day.
-            </p>
-            <p>
-              <a
-                class="btn btn--small"
-                href="https://www.google.com/maps/search/?api=1&amp;query=4739+Wyandotte+Street+E,+Windsor,+ON+N8Y+1H8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get directions
-              </a>
-            </p>
-          </div>
-          <div class="card card--map">
-            <img src="/images/interior-side.png" alt="Inside seating at Allstar Eateries" />
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section section--contact">
-        <div class="inner narrow">
-          <h2>Contact</h2>
-          <p>Follow us or get in touch.</p>
-          <ul class="contact-list">
-            <li><a href="mailto:allstarinc2026@gmail.com">allstarinc2026@gmail.com</a></li>
-            <li><a href="tel:+15199445534">(519) 944-5534</a></li>
-          </ul>
-          <div class="social-buttons" aria-label="Social media links">
-            <a
-              class="social-btn social-btn--instagram"
-              href="https://www.instagram.com/allstar.eateries?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram @allstar.eateries"
-            >
-              <span class="social-icon" aria-hidden="true">IG</span>
-              <span>Instagram</span>
-            </a>
-            <a
-              class="social-btn social-btn--facebook"
-              href="https://www.facebook.com/profile.php?id=61577681850449"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook ALL STAR"
-            >
-              <span class="social-icon" aria-hidden="true">f</span>
-              <span>Facebook</span>
-            </a>
-            <a
-              class="social-btn social-btn--tiktok"
-              href="https://www.tiktok.com/@allstar.eateries?_r=1&amp;_t=ZS-95qdUh9u1dl"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok @allstar.eateries"
-            >
-              <span class="social-icon" aria-hidden="true">♪</span>
-              <span>TikTok</span>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -231,7 +260,39 @@
 
     <footer class="site-footer">
       <div class="inner">
-        <p>© <span id="year"></span> Allstar Eateries. All rights reserved.</p>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="/">Allstar Eateries</a>
+            <p>Premium coffee, loaded donuts, and African comfort food in East Windsor. Open daily 6 AM – midnight.</p>
+          </div>
+          <div class="footer-col">
+            <h3>Explore</h3>
+            <ul class="footer-links">
+              <li><a href="/menu.html">Menu</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#visit">Visit</a></li>
+              <li><a href="#" data-order-online>Order online</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="tel:+15199445534">(519) 944-5534</a></li>
+              <li><a href="mailto:allstarinc2026@gmail.com">allstarinc2026@gmail.com</a></li>
+              <li>4739 Wyandotte St E</li>
+              <li>Windsor, ON N8Y 1H8</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Follow us</h3>
+            <div class="social-row">
+              <a class="social-link" href="https://www.instagram.com/allstar.eateries?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a class="social-link" href="https://www.facebook.com/profile.php?id=61577681850449" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a class="social-link" href="https://www.tiktok.com/@allstar.eateries?_r=1&amp;_t=ZS-95qdUh9u1dl" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+          </div>
+        </div>
+        <p class="footer-bottom">© <span id="year"></span> Allstar Eateries. All rights reserved.</p>
       </div>
     </footer>
 

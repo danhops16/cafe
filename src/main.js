@@ -1,5 +1,6 @@
 const nav = document.getElementById("site-nav");
 const toggle = document.querySelector(".nav-toggle");
+const header = document.getElementById("site-header");
 const year = document.getElementById("year");
 
 const orderUrl = import.meta.env.VITE_CLOVER_ORDERING_URL?.trim();
@@ -36,12 +37,56 @@ function setNavOpen(open) {
   toggle.setAttribute("aria-expanded", open ? "true" : "false");
 }
 
+function setupHeaderScroll() {
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function setupMenuTabs() {
+  const tabs = document.querySelectorAll(".menu-tab");
+  const sections = document.querySelectorAll(".menu-category");
+
+  if (!tabs.length || !sections.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((item) => item.classList.remove("is-active"));
+      tab.classList.add("is-active");
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        tabs.forEach((tab) => {
+          tab.classList.toggle("is-active", tab.getAttribute("href") === `#${id}`);
+        });
+      });
+    },
+    {
+      rootMargin: "-40% 0px -45% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
 setupOrderLinks();
+setupHeaderScroll();
+setupMenuTabs();
 
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
-    const open = !nav.classList.contains("is-open");
-    setNavOpen(open);
+    setNavOpen(!nav.classList.contains("is-open"));
   });
 
   nav.querySelectorAll("a").forEach((link) => {
@@ -49,7 +94,7 @@ if (toggle && nav) {
   });
 
   window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 721px)").matches) {
+    if (window.matchMedia("(min-width: 821px)").matches) {
       setNavOpen(false);
     }
   });

@@ -1,147 +1,221 @@
-.menu-page .page-hero {
-  padding: 3rem 0 2.5rem;
+/* Menu page */
+.menu-hero {
+  position: relative;
+  padding: calc(var(--header-h) + 3rem) 0 3rem;
+  color: var(--white);
   text-align: center;
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  overflow: hidden;
 }
 
-.menu-page .page-hero h1 {
+.menu-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(44, 24, 16, 0.82) 0%,
+    rgba(44, 24, 16, 0.92) 100%
+  );
+}
+
+.menu-hero .inner {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   margin: 0 0 0.75rem;
 }
 
-.menu-page .page-hero .section__intro {
-  margin-inline: auto;
+.menu-hero p {
+  margin: 0 auto 1.5rem;
+  max-width: 520px;
+  color: color-mix(in srgb, var(--white) 88%, transparent);
+  font-size: 1.05rem;
 }
 
-.menu-jump {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem 0.85rem;
-  padding: 1rem 0 1.25rem;
+.menu-tabs {
   position: sticky;
-  top: 4.1rem;
-  z-index: 40;
-  background: color-mix(in srgb, var(--color-cream) 94%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  top: var(--header-h);
+  z-index: 50;
+  background: color-mix(in srgb, var(--white) 94%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--brown) 8%, transparent);
+  padding: 0.85rem 0;
 }
 
-.menu-jump a {
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  padding: 0.35rem 0.75rem;
+.menu-tabs .inner {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-tabs .inner::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tab {
+  flex-shrink: 0;
+  padding: 0.55rem 1.1rem;
   border-radius: 999px;
-  color: var(--color-ink);
-  background: var(--color-bg-alt);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--brown-soft);
+  background: var(--cream-dark);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.menu-jump a:hover {
-  color: var(--color-accent);
+.menu-tab:hover,
+.menu-tab.is-active {
+  background: var(--brown);
+  color: var(--cream);
 }
 
-.menu-section {
-  padding: 2.75rem 0;
+.menu-category {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  scroll-margin-top: calc(var(--header-h) + 4rem);
 }
 
-.menu-section h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  margin: 0 0 0.35rem;
+.menu-category__banner {
+  margin-bottom: 1.75rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-height: 220px;
+  box-shadow: var(--shadow-sm);
 }
 
-.menu-section__intro {
-  color: var(--color-ink-muted);
-  margin: 0 0 1.75rem;
+.menu-category__banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.menu-showcase {
-  display: grid;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.menu-posters {
+.menu-items {
   display: grid;
   gap: 1rem;
-  align-items: start;
 }
 
-.menu-posters img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+.menu-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.15rem;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--brown) 8%, transparent);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
 
-.menu-posters--single {
-  max-width: 520px;
+.menu-item--text-only {
+  grid-template-columns: 1fr;
 }
 
-.menu-posters--gallery {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+.menu-item__thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--cream-dark);
 }
 
-.menu-card--list {
+.menu-item__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-item__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.menu-item__content h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+  color: var(--brown);
+}
+
+.menu-item__content p {
   margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
 }
 
-.menu-card--wide {
-  margin-top: 1.5rem;
+.menu-item__price {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
-.menu-cta {
-  padding: 3rem 0 4rem;
+.menu-cta-band {
   text-align: center;
+  padding: 3.5rem 0 4.5rem;
 }
 
-.menu-cta h2 {
+.menu-cta-band h2 {
   font-family: var(--font-display);
   margin: 0 0 0.5rem;
 }
 
-.menu-cta .section__intro {
-  margin-inline: auto;
+.menu-cta-band p {
+  margin: 0 auto 1.5rem;
+  color: var(--ink-muted);
+  max-width: 420px;
 }
 
-.menu-cta p:last-child {
+.menu-cta-band .btn-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
 }
 
-@media (min-width: 900px) {
-  .menu-showcase {
-    grid-template-columns: 1.4fr 0.9fr;
-    gap: 2rem;
+@media (min-width: 640px) {
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .menu-posters {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .menu-item--wide {
+    grid-column: 1 / -1;
+    grid-template-columns: 120px 1fr;
   }
 
-  .menu-posters--single {
-    grid-template-columns: 1fr;
+  .menu-item--wide .menu-item__thumb {
+    width: 120px;
+    height: 120px;
   }
 }
 
-@media (max-width: 719px) {
-  .menu-jump {
-    top: 3.6rem;
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-inline: max(1.25rem, calc((100% - var(--max)) / 2 + 1.25rem));
-    scrollbar-width: none;
-  }
-
-  .menu-jump::-webkit-scrollbar {
-    display: none;
+@media (min-width: 960px) {
+  .menu-items--single-col {
+    grid-template-columns: 1fr;
+    max-width: 720px;
   }
 }
