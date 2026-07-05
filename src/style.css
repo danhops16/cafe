@@ -412,6 +412,17 @@ a:hover {
   aspect-ratio: 4 / 3;
 }
 
+.card--poster {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0;
+}
+
+.card--poster img {
+  height: auto;
+  object-fit: contain;
+}
+
 .card--map {
   aspect-ratio: 1 / 1;
   min-height: 280px;
@@ -546,8 +557,9 @@ a:hover {
 
 .featured-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .featured-card figcaption {
