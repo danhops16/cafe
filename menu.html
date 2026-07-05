@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu — Allstar Eateries</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/menu.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="inner">
+        <a class="logo" href="/">Allstar Eateries</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/menu.html" aria-current="page">Menu</a></li>
+            <li><a href="#" data-order-online>Order online</a></li>
+            <li><a href="/#visit">Visit</a></li>
+            <li><a class="btn btn--small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="menu-page">
+      <section class="page-hero">
+        <div class="inner narrow">
+          <p class="eyebrow">Allstar Eateries</p>
+          <h1>Our menu</h1>
+          <p class="section__intro">
+            Coffee, donuts, loaded nachos, African plates, and pepper soups —
+            made fresh daily in Windsor.
+          </p>
+          <p>
+            <a class="btn" href="#" data-order-online>Order online for pickup</a>
+          </p>
+        </div>
+      </section>
+
+      <nav class="menu-jump inner" aria-label="Menu categories">
+        <a href="#drinks">Drinks</a>
+        <a href="#donuts">Donuts</a>
+        <a href="#combos">Combos</a>
+        <a href="#african">African plates</a>
+        <a href="#soups">Soups</a>
+      </nav>
+
+      <section id="drinks" class="menu-section">
+        <div class="inner">
+          <h2>Drinks</h2>
+          <p class="menu-section__intro">Hot, iced, and specialty sips.</p>
+          <div class="menu-showcase">
+            <div class="menu-posters">
+              <img src="/images/promos/allstar-brand.png" alt="All Star premium coffee and freshly baked goods" loading="lazy" />
+              <img src="/images/promos/iced-lattes.png" alt="Vanilla and caramel iced lattes" loading="lazy" />
+            </div>
+            <article class="menu-card menu-card--list">
+              <ul class="menu-prices">
+                <li><span>Vanilla Iced Latte</span></li>
+                <li><span>Caramel Iced Latte</span></li>
+                <li><span>All Star French Vanilla</span></li>
+                <li><span>French Vanilla Coffee</span></li>
+                <li><span>Latte / Cappuccino</span></li>
+                <li><span>Coffee / Espresso Style</span></li>
+                <li><span>Cafe Mocha / Mochaccino</span></li>
+                <li><span>Hot Chocolate / Hot Milk Chocolate</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="donuts" class="menu-section section--alt">
+        <div class="inner">
+          <h2>Gourmet &amp; loaded donuts</h2>
+          <p class="menu-section__intro">Fresh donut favorites baked in house.</p>
+          <div class="menu-showcase">
+            <div class="menu-posters menu-posters--single">
+              <img src="/images/donut-classic.png" alt="Gourmet and loaded donut menu" loading="lazy" />
+            </div>
+            <article class="menu-card menu-card--list">
+              <ul class="menu-prices">
+                <li><span>Classic Donut</span></li>
+                <li><span>Chocolate Explosion</span></li>
+                <li><span>Nutella Filled</span></li>
+                <li><span>Cookies &amp; Cream</span></li>
+                <li><span>Maple Bacon</span></li>
+                <li><span>Mini Donut Cup</span></li>
+                <li><span>Lemon Zest</span></li>
+                <li><span>Old Fashioned Plain</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="combos" class="menu-section">
+        <div class="inner">
+          <h2>Combos &amp; savory</h2>
+          <p class="menu-section__intro">Crispy bites, loaded nachos, and comfort-food sides.</p>
+          <div class="menu-posters menu-posters--gallery">
+            <img src="/images/promos/chicken-tender-meal.png" alt="Crispy chicken tender with cheesy wedges — $8.99" loading="lazy" />
+            <img src="/images/promos/buffalo-chicken-nachos.png" alt="Buffalo chicken loaded nachos — $13.50" loading="lazy" />
+            <img src="/images/promos/mexican-beef-nachos.png" alt="Mexican beef loaded nachos — $12.50" loading="lazy" />
+            <img src="/images/promos/loaded-nachos.png" alt="Loaded nachos menu" loading="lazy" />
+          </div>
+          <article class="menu-card menu-card--list menu-card--wide">
+            <ul class="menu-prices">
+              <li><span>Crispy Chicken Tender &amp; Cheesy Wedges</span><span class="price">$8.99</span></li>
+              <li><span>Buffalo Chicken Nachos</span><span class="price">$13.50</span></li>
+              <li><span>Mexican Beef Nachos</span><span class="price">$12.50</span></li>
+              <li><span>Chicken Wings</span></li>
+              <li><span>Chicken Drumsticks</span></li>
+              <li><span>French Fries &amp; Ketchup</span></li>
+              <li><span>Nachos</span></li>
+              <li><span>Pops (assorted flavors)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="african" class="menu-section section--alt">
+        <div class="inner">
+          <h2>African plates</h2>
+          <p class="menu-section__intro">Hearty rice, plantains, salad, and protein.</p>
+          <div class="menu-posters menu-posters--gallery">
+            <img src="/images/promos/jollof-rice-plate.png" alt="Jollof rice with fried plantains, salad, and chicken — $14.99" loading="lazy" />
+            <img src="/images/promos/african-cuisine-plate.png" alt="Fried rice with fried plantains, salad, and chicken — $14.99" loading="lazy" />
+          </div>
+          <article class="menu-card menu-card--list menu-card--wide">
+            <ul class="menu-prices">
+              <li><span>Jollof Rice, Plantains, Salad &amp; Chicken</span><span class="price">$14.99</span></li>
+              <li><span>Fried Rice, Plantains, Salad &amp; Chicken</span><span class="price">$14.99</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="soups" class="menu-section">
+        <div class="inner">
+          <h2>Soups</h2>
+          <p class="menu-section__intro">Bold, spicy, and served hot.</p>
+          <div class="menu-posters menu-posters--gallery">
+            <img src="/images/promos/assorted-pepper-soup.png" alt="Assorted pepper soup — $11.40" loading="lazy" />
+            <img src="/images/promos/egusi-soup-fufu.png" alt="Egusi soup and fufu — $11.50" loading="lazy" />
+            <img src="/images/promos/fufu-vegetable-soup.png" alt="Fufu and vegetable soup — $12.00" loading="lazy" />
+            <img src="/images/promos/catfish-pepper-soup.png" alt="Cat fish pepper soup — $16.50" loading="lazy" />
+          </div>
+          <article class="menu-card menu-card--list menu-card--wide">
+            <ul class="menu-prices">
+              <li><span>Assorted Pepper Soup</span><span class="price">$11.40</span></li>
+              <li><span>Egusi Soup &amp; Fufu</span><span class="price">$11.50</span></li>
+              <li><span>Fufu &amp; Vegetable Soup</span><span class="price">$12.00</span></li>
+              <li><span>Cat Fish Pepper Soup</span><span class="price">$16.50</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-cta section--alt">
+        <div class="inner narrow">
+          <h2>Ready to order?</h2>
+          <p class="section__intro">
+            Place your pickup order through Clover Online Ordering.
+          </p>
+          <p>
+            <a class="btn" href="#" data-order-online>Order online</a>
+            <a class="btn btn--ghost" href="/">Back to home</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <p>© <span id="year"></span> Allstar Eateries. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
