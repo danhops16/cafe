@@ -31,6 +31,7 @@
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
+            <li><a href="#" data-order-online>Order online</a></li>
             <li><a href="#visit">Visit</a></li>
             <li><a class="btn btn--small" href="#contact">Contact</a></li>
           </ul>
@@ -47,13 +48,14 @@
         ></div>
         <div class="inner hero__content">
           <p class="eyebrow">Allstar Eateries</p>
-          <h1>Great coffee, savory bites, and loaded donuts.</h1>
+          <h1>Coffee, comfort food, African cuisine, and loaded donuts.</h1>
           <p class="lede">
-            Fresh drinks, quick comfort food, and a welcoming space in the
-            neighborhood. Stop in, relax, and fuel up.
+            Premium coffee, hearty plates, pepper soups, nachos, and fresh
+            baked favorites — dine in or order online for pickup.
           </p>
           <div class="hero__actions">
-            <a class="btn" href="#visit">Hours &amp; location</a>
+            <a class="btn" href="#" data-order-online>Order online</a>
+            <a class="btn btn--ghost" href="#visit">Hours &amp; location</a>
             <a class="btn btn--ghost" href="#menu">See the menu</a>
           </div>
         </div>
@@ -64,9 +66,9 @@
           <div>
             <h2>About us</h2>
             <p>
-              Allstar Eateries is your neighborhood spot in Windsor for great
-              coffee, loaded donuts, and savory comfort food made to satisfy
-              any craving.
+              Allstar Eateries is your neighborhood spot in Windsor for premium
+              coffee, loaded donuts, African cuisine, pepper soups, and savory
+              comfort food made to satisfy any craving.
             </p>
             <p>
               Whether you are grabbing a quick drink, meeting friends, or
@@ -76,7 +78,7 @@
             </p>
           </div>
           <div class="card card--photo">
-            <img src="/images/interior-counter.png" alt="Allstar Eateries dining area and counter" />
+            <img src="/images/promos/allstar-brand.png" alt="All Star premium coffee and freshly baked goods — Fuel for Champions" />
           </div>
         </div>
       </section>
@@ -85,19 +87,20 @@
         <div class="inner">
           <h2>Menu highlights</h2>
           <p class="section__intro">
-            Signature favorites from Allstar Eateries.
+            A taste of what we serve. Full menu and ordering live on Clover —
+            use <a href="#" data-order-online>Order online</a> when you are ready.
           </p>
-          <div class="menu-grid">
+          <div class="menu-grid menu-grid--wide">
             <article class="menu-card">
               <h3>Drinks</h3>
-              <p>Hot and specialty beverages.</p>
+              <p>Hot, iced, and specialty sips.</p>
               <ul class="menu-prices">
+                <li><span>Vanilla Iced Latte</span></li>
+                <li><span>Caramel Iced Latte</span></li>
                 <li><span>All Star French Vanilla</span></li>
-                <li><span>French Vanilla Coffee</span></li>
                 <li><span>Latte / Cappuccino</span></li>
-                <li><span>Coffee / Espresso Style</span></li>
                 <li><span>Cafe Mocha / Mochaccino</span></li>
-                <li><span>Hot Chocolate / Hot Milk Chocolate</span></li>
+                <li><span>Hot Chocolate</span></li>
               </ul>
             </article>
             <article class="menu-card">
@@ -107,35 +110,108 @@
                 <li><span>Classic Donut</span></li>
                 <li><span>Chocolate Explosion</span></li>
                 <li><span>Nutella Filled</span></li>
-                <li><span>Cookies &amp; Cream</span></li>
                 <li><span>Maple Bacon</span></li>
+                <li><span>Cookies &amp; Cream</span></li>
                 <li><span>Mini Donut Cup</span></li>
-                <li><span>Lemon Zest</span></li>
-                <li><span>Old Fashioned Plain</span></li>
               </ul>
             </article>
             <article class="menu-card">
-              <h3>Savory Bites &amp; Pops</h3>
-              <p>Snacks and comfort-food sides.</p>
+              <h3>Combos &amp; Savory</h3>
+              <p>Crispy bites and loaded plates.</p>
               <ul class="menu-prices">
-                <li><span>French Fries &amp; Ketchup</span></li>
+                <li><span>Crispy Chicken Tender &amp; Cheesy Wedges</span><span class="price">$8.99</span></li>
+                <li><span>Buffalo Chicken Nachos</span><span class="price">$13.50</span></li>
+                <li><span>Mexican Beef Nachos</span><span class="price">$12.50</span></li>
                 <li><span>Chicken Wings</span></li>
-                <li><span>Chicken Drumsticks</span></li>
+                <li><span>French Fries &amp; Ketchup</span></li>
                 <li><span>Nachos</span></li>
-                <li><span>Pops (assorted flavors)</span></li>
+              </ul>
+            </article>
+            <article class="menu-card">
+              <h3>African Plates</h3>
+              <p>Hearty rice, plantains, and protein.</p>
+              <ul class="menu-prices">
+                <li><span>Jollof Rice, Plantains, Salad &amp; Chicken</span><span class="price">$14.99</span></li>
+                <li><span>Fried Rice, Plantains, Salad &amp; Chicken</span><span class="price">$14.99</span></li>
+              </ul>
+            </article>
+            <article class="menu-card">
+              <h3>Soups</h3>
+              <p>Bold, spicy, and served hot.</p>
+              <ul class="menu-prices">
+                <li><span>Assorted Pepper Soup</span><span class="price">$11.40</span></li>
+                <li><span>Egusi Soup &amp; Fufu</span><span class="price">$11.50</span></li>
+                <li><span>Fufu &amp; Vegetable Soup</span><span class="price">$12.00</span></li>
+                <li><span>Cat Fish Pepper Soup</span><span class="price">$16.50</span></li>
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--alt">
+      <section id="featured" class="section section--alt">
         <div class="inner">
-          <h2>From our kitchen</h2>
-          <div class="photo-grid" aria-label="Food and café photos">
-            <img src="/images/chicken-wings.png" alt="Chicken wings with dipping sauce" />
-            <img src="/images/donut-classic.png" alt="Donut Menu" />
-            <img src="/images/allstar-combo-box.png" alt="Allstar combo box with wings, fries, and nachos" />
+          <h2>Featured favorites</h2>
+          <p class="section__intro">
+            Customer favorites from our kitchen — order for pickup when you are ready.
+          </p>
+          <div class="featured-grid">
+            <figure class="featured-card">
+              <img src="/images/promos/iced-lattes.png" alt="Vanilla and caramel iced lattes" loading="lazy" />
+              <figcaption>
+                <strong>Iced Lattes</strong>
+                <span>Cool, creamy, and irresistible.</span>
+              </figcaption>
+            </figure>
+            <figure class="featured-card">
+              <img src="/images/promos/chicken-tender-meal.png" alt="Crispy chicken tender with cheesy wedges combo for $8.99" loading="lazy" />
+              <figcaption>
+                <strong>Chicken Tender Combo</strong>
+                <span class="price">$8.99</span>
+              </figcaption>
+            </figure>
+            <figure class="featured-card">
+              <img src="/images/promos/buffalo-chicken-nachos.png" alt="Buffalo chicken loaded nachos for $13.50" loading="lazy" />
+              <figcaption>
+                <strong>Buffalo Chicken Nachos</strong>
+                <span class="price">$13.50</span>
+              </figcaption>
+            </figure>
+            <figure class="featured-card">
+              <img src="/images/promos/jollof-rice-plate.png" alt="Jollof rice with fried plantains, salad, and chicken for $14.99" loading="lazy" />
+              <figcaption>
+                <strong>Jollof Rice Plate</strong>
+                <span class="price">$14.99</span>
+              </figcaption>
+            </figure>
+            <figure class="featured-card">
+              <img src="/images/promos/egusi-soup-fufu.png" alt="Egusi soup and fufu for $11.50" loading="lazy" />
+              <figcaption>
+                <strong>Egusi Soup &amp; Fufu</strong>
+                <span class="price">$11.50</span>
+              </figcaption>
+            </figure>
+            <figure class="featured-card">
+              <img src="/images/promos/catfish-pepper-soup.png" alt="Cat fish pepper soup for $16.50" loading="lazy" />
+              <figcaption>
+                <strong>Cat Fish Pepper Soup</strong>
+                <span class="price">$16.50</span>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="featured-cta">
+            <a class="btn" href="#" data-order-online>Order online for pickup</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>Inside Allstar</h2>
+          <div class="photo-grid" aria-label="Restaurant photos">
+            <img src="/images/interior-front.png" alt="Allstar Eateries storefront and dining area" loading="lazy" />
+            <img src="/images/donut-classic.png" alt="Gourmet and loaded donuts menu" loading="lazy" />
+            <img src="/images/chicken-wings.png" alt="Chicken wings with dipping sauce" loading="lazy" />
           </div>
         </div>
       </section>

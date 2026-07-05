@@ -461,11 +461,25 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .menu-grid--wide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .menu-posters {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .menu-grid--wide {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -508,6 +522,58 @@ a:hover {
 
 .menu-prices li:last-child {
   border-bottom: 0;
+}
+
+.menu-prices .price {
+  font-weight: 600;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.featured-card {
+  margin: 0;
+  background: var(--color-cream);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.featured-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.featured-card figcaption {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.featured-card figcaption strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.featured-card figcaption span {
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+.featured-card figcaption .price {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.featured-cta {
+  margin: 2rem 0 0;
+  text-align: center;
 }
 
 .hours {
