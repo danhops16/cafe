@@ -544,11 +544,14 @@ a:hover {
 .featured-grid {
   display: grid;
   gap: 1.25rem;
+  align-items: start;
 }
 
 .featured-card {
   margin: 0;
-  background: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
@@ -559,13 +562,17 @@ a:hover {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
 }
 
 .featured-card figcaption {
-  display: grid;
-  gap: 0.35rem;
-  padding: 1rem 1.1rem 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  padding: 0.7rem 0.85rem 0.8rem;
+  background: var(--color-cream);
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
 .featured-card figcaption strong {
