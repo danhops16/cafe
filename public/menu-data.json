@@ -1,0 +1,510 @@
+{
+  "source": "clover",
+  "updatedAt": "2026-07-10T02:11:58.930Z",
+  "categories": [
+    {
+      "id": "foods",
+      "name": "Foods",
+      "items": [
+        {
+          "id": "19TS1Y6EDF7S2",
+          "name": "Assorted Pepper Soup",
+          "description": null,
+          "price": "$11.40",
+          "image": "/images/menu/assorted-pepper-soup.png"
+        },
+        {
+          "id": "RNXB1280D6M4W",
+          "name": "Catfish Pepper Soup",
+          "description": null,
+          "price": "$16.50",
+          "image": "/images/menu/catfish-pepper-soup.png"
+        },
+        {
+          "id": "A4AAFD4J333SE",
+          "name": "Chicken Lap",
+          "description": null,
+          "price": "$5.00",
+          "image": null
+        },
+        {
+          "id": "SPCN34342YN76",
+          "name": "Chicken Wings",
+          "description": null,
+          "price": "$4.50",
+          "image": "/images/menu/chicken-wings.png"
+        },
+        {
+          "id": "FXXN92SSYG90P",
+          "name": "Crispy Chicken Tender With Cheesy Wedges",
+          "description": null,
+          "price": "$8.99",
+          "image": "/images/menu/chicken-tender-combo.png"
+        },
+        {
+          "id": "K0Q6XXGHTFKYA",
+          "name": "Egusi Soup & Swallow",
+          "description": null,
+          "price": "$11.50",
+          "image": "/images/menu/egusi-fufu.png"
+        },
+        {
+          "id": "AQC1GKPEJQHMW",
+          "name": "Fried Rice, Fried Plantain, Salad & Chicken",
+          "description": null,
+          "price": "$14.99",
+          "image": "/images/menu/fried-rice-plate.png"
+        },
+        {
+          "id": "4JBKVSF28C00A",
+          "name": "Jollof Rice Fried Plantain, Salad & Chicken",
+          "description": null,
+          "price": "$14.99",
+          "image": "/images/menu/jollof-rice-plate.png"
+        },
+        {
+          "id": "VWXYS3JVD0CA0",
+          "name": "Vegetable Soup & Swallow",
+          "description": null,
+          "price": "$12.00",
+          "image": "/images/menu/fufu-vegetable-soup.png"
+        }
+      ]
+    },
+    {
+      "id": "bakery",
+      "name": "Bakery",
+      "items": [
+        {
+          "id": "2ANSMG2XD5REG",
+          "name": "Apple Fritter",
+          "description": null,
+          "price": "$2.00",
+          "image": null
+        },
+        {
+          "id": "HJA47H31BEGHC",
+          "name": "Apple Turnover",
+          "description": null,
+          "price": "$2.50",
+          "image": null
+        },
+        {
+          "id": "SGNG0SCVGN7FT",
+          "name": "Banana Chocolate Chip Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": null
+        },
+        {
+          "id": "YEHR79JA4WPRG",
+          "name": "Butter Croissants",
+          "description": null,
+          "price": "$2.00",
+          "image": null
+        },
+        {
+          "id": "6Z57YTD7TEZRT",
+          "name": "Canolli",
+          "description": null,
+          "price": "$4.00",
+          "image": null
+        },
+        {
+          "id": "Z3S328YRPQ6M2",
+          "name": "Cherry Cheesecake",
+          "description": null,
+          "price": "$3.54",
+          "image": null
+        },
+        {
+          "id": "TBM5KT4PS10F2",
+          "name": "Honey Cruller",
+          "description": null,
+          "price": "$2.00",
+          "image": null
+        },
+        {
+          "id": "CRQP39P2A1YR2",
+          "name": "Long John",
+          "description": null,
+          "price": "$2.00",
+          "image": null
+        },
+        {
+          "id": "GX27A43EW9VVP",
+          "name": "Mango Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": null
+        },
+        {
+          "id": "G0ZSBB43YNMHA",
+          "name": "Maple Bacon",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/maple-bacon-donut.png"
+        },
+        {
+          "id": "T7FWN6VXQ9W5G",
+          "name": "Old Fashioned Plain",
+          "description": null,
+          "price": "$2.00",
+          "image": null
+        },
+        {
+          "id": "MTFHNFQDKTWAE",
+          "name": "Raisin Bran Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": null
+        },
+        {
+          "id": "VQJTXKRY2DX54",
+          "name": "Strawberry Cloud",
+          "description": null,
+          "price": "$3.54",
+          "image": null
+        },
+        {
+          "id": "BJY1G2W3B1VER",
+          "name": "Strawberry Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "pops-can",
+      "name": "Pops Can",
+      "items": [
+        {
+          "id": "T5CQ6GDSXPG46",
+          "name": "A&W",
+          "description": null,
+          "price": "$1.50",
+          "image": null
+        },
+        {
+          "id": "4VZY5W7JE6788",
+          "name": "Canada Dry Can",
+          "description": null,
+          "price": "$1.25",
+          "image": null
+        },
+        {
+          "id": "5T7Z3670Z5Z1G",
+          "name": "Coca-Cola Can",
+          "description": null,
+          "price": "$1.25",
+          "image": null
+        },
+        {
+          "id": "7CEW4BGBKE26J",
+          "name": "Dr Pepper",
+          "description": null,
+          "price": "$1.50",
+          "image": null
+        },
+        {
+          "id": "WH076HZXJN3KE",
+          "name": "Fanta Orange Can",
+          "description": null,
+          "price": "$1.25",
+          "image": null
+        },
+        {
+          "id": "3KG47M4AZT106",
+          "name": "Mountain Dew Can",
+          "description": null,
+          "price": "$1.50",
+          "image": null
+        },
+        {
+          "id": "S8P2RR05R6AN2",
+          "name": "Pepsi Can",
+          "description": null,
+          "price": "$1.25",
+          "image": null
+        },
+        {
+          "id": "FQ90WHH0R2RT8",
+          "name": "Sprite Can",
+          "description": null,
+          "price": "$1.25",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "pops-bottle",
+      "name": "Pops Bottle",
+      "items": [
+        {
+          "id": "N3ZSAQWDXT9JP",
+          "name": "7up Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "T6KNAQ8F74AWA",
+          "name": "Canadab Dry",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "2CS4TN7FEXXZ2",
+          "name": "Coca-Cola Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "BVT36H4A6YQEG",
+          "name": "Diet Coke Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "QSSXZ13E7GKK2",
+          "name": "Fanta Orange Bottle",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "ZKNAJN9HZGEEE",
+          "name": "G Zero",
+          "description": null,
+          "price": "$3.25",
+          "image": null
+        },
+        {
+          "id": "3MX6CSG9A7WF4",
+          "name": "Mountain Dew Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "WAG854BHN1TD8",
+          "name": "Pepsi Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "3PZ8SYDND768E",
+          "name": "Sprite Bottle",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "energy-drinks",
+      "name": "Energy Drinks",
+      "items": [
+        {
+          "id": "DGTTA2YZXH7ZJ",
+          "name": "5 Hour Energy",
+          "description": null,
+          "price": "$3.49",
+          "image": null
+        },
+        {
+          "id": "27A7CSZPYSYSP",
+          "name": "Bang",
+          "description": null,
+          "price": "$4.55",
+          "image": null
+        },
+        {
+          "id": "F6JB9EAGWXBS6",
+          "name": "Celsius",
+          "description": null,
+          "price": "$4.00",
+          "image": null
+        },
+        {
+          "id": "AC0WEDK20SGRY",
+          "name": "Monster",
+          "description": null,
+          "price": "$4.00",
+          "image": null
+        },
+        {
+          "id": "AR9ASRXT2EXHR",
+          "name": "NOS",
+          "description": null,
+          "price": "$4.55",
+          "image": null
+        },
+        {
+          "id": "Y04TVAGTP0G56",
+          "name": "Prime Energy",
+          "description": null,
+          "price": "$4.35",
+          "image": null
+        },
+        {
+          "id": "RCHCNZTXYCYD8",
+          "name": "Red Bull",
+          "description": null,
+          "price": "$4.20",
+          "image": null
+        },
+        {
+          "id": "3PKJJ0JD2NY2A",
+          "name": "Rockstar",
+          "description": null,
+          "price": "$4.00",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "bottled-water",
+      "name": "Bottled Water",
+      "items": [
+        {
+          "id": "V2RF9VQANGFTG",
+          "name": "Aquafina",
+          "description": null,
+          "price": "$2.29",
+          "image": null
+        },
+        {
+          "id": "6R2HY494TKEXC",
+          "name": "Aquafina Small",
+          "description": null,
+          "price": "$1.50",
+          "image": null
+        },
+        {
+          "id": "375B3Q9M5PGDM",
+          "name": "Bottle water",
+          "description": null,
+          "price": "$3.00",
+          "image": null
+        },
+        {
+          "id": "GWBWF666P4EG4",
+          "name": "Eva Water",
+          "description": null,
+          "price": "$2.49",
+          "image": null
+        },
+        {
+          "id": "1HA318FG74KXC",
+          "name": "Evian",
+          "description": null,
+          "price": "$2.30",
+          "image": null
+        },
+        {
+          "id": "R4S81R4J97460",
+          "name": "Fiji Water",
+          "description": null,
+          "price": "$2.45",
+          "image": null
+        },
+        {
+          "id": "1VBAAN8ZR9AAM",
+          "name": "Nestle Pure Life",
+          "description": null,
+          "price": "$2.29",
+          "image": null
+        },
+        {
+          "id": "VFSD8E75XKA4P",
+          "name": "Smart Water",
+          "description": null,
+          "price": "$4.00",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "hot-beverages",
+      "name": "Hot Beverages",
+      "items": [
+        {
+          "id": "WS2Y30VGXPC9E",
+          "name": "Cafe Mocha",
+          "description": null,
+          "price": null,
+          "image": "/images/menu/cafe-mocha.png"
+        },
+        {
+          "id": "5E1395WXCM6CR",
+          "name": "Cappucinno",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "5TQ72477ACPXP",
+          "name": "Coffee (original/dark roast)",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "MVV5CSJ621BJG",
+          "name": "Expresso Style",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "W4E108RR91GRG",
+          "name": "French Vanilla",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "20T82E1SW3864",
+          "name": "French Vanilla Coffee",
+          "description": null,
+          "price": null,
+          "image": "/images/menu/french-vanilla-coffee.png"
+        },
+        {
+          "id": "PY05AF7195VHJ",
+          "name": "Hot Chocolate",
+          "description": null,
+          "price": null,
+          "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "9D2Y8DQ9K6AAC",
+          "name": "Hot Milk Chocolate",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "XVBKDSXXKF4TJ",
+          "name": "Latte",
+          "description": null,
+          "price": null,
+          "image": null
+        },
+        {
+          "id": "YV863R4EHC5AG",
+          "name": "Mochaccino",
+          "description": null,
+          "price": null,
+          "image": null
+        }
+      ]
+    }
+  ]
+}

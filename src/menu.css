@@ -88,6 +88,14 @@
   scroll-margin-top: calc(var(--header-h) + 4rem);
 }
 
+.menu-sync-note {
+  margin: 0;
+  padding: 0 1.25rem 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
 .menu-category__banner {
   margin-bottom: 1.75rem;
   border-radius: var(--radius);

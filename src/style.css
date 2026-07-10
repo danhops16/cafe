@@ -177,16 +177,20 @@ a:hover {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--brown);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.02em;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  height: 52px;
+  width: auto;
 }
 
 .logo:hover {
-  color: var(--accent);
+  opacity: 0.92;
 }
 
 .nav-toggle {
@@ -229,16 +233,29 @@ a:hover {
   padding: 0;
 }
 
-.site-nav a {
+.site-nav a:not(.btn) {
   font-weight: 500;
   color: var(--brown-soft);
   text-decoration: none;
   padding: 0.35rem 0;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav a:not(.btn):hover,
+.site-nav a:not(.btn)[aria-current="page"] {
   color: var(--accent);
+}
+
+.site-nav .btn {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.site-nav .btn:hover {
+  color: var(--white);
 }
 
 /* Buttons */
@@ -621,10 +638,12 @@ a:hover {
 }
 
 .footer-brand .logo {
-  color: var(--cream);
-  font-size: 1.35rem;
   display: inline-block;
   margin-bottom: 0.75rem;
+}
+
+.footer-brand .logo img {
+  height: 58px;
 }
 
 .footer-brand p {
@@ -724,15 +743,17 @@ a:hover {
     border-bottom: 1px solid color-mix(in srgb, var(--brown) 6%, transparent);
   }
 
-  .site-nav a {
+  .site-nav a:not(.btn) {
     display: block;
     padding: 0.85rem 0;
   }
 
   .site-nav .btn {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
     width: 100%;
     justify-content: center;
+    padding: 0.75rem 1.15rem;
   }
 }
 

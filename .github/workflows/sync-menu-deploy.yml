@@ -1,0 +1,56 @@
+name: Sync menu and deploy
+
+on:
+  schedule:
+    # Every 6 hours (UTC)
+    - cron: "0 */6 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: namecheap-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync Clover menu and build
+        run: npm run build
+        env:
+          CLOVER_MERCHANT_ID: ${{ secrets.CLOVER_MERCHANT_ID }}
+          CLOVER_API_TOKEN: ${{ secrets.CLOVER_API_TOKEN }}
+          CLOVER_API_BASE: https://api.clover.com
+          VITE_CLOVER_ORDERING_URL: ${{ secrets.VITE_CLOVER_ORDERING_URL }}
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$NAMECHEAP_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p "$NAMECHEAP_SSH_PORT" "$NAMECHEAP_SSH_HOST" >> ~/.ssh/known_hosts
+        env:
+          NAMECHEAP_SSH_PRIVATE_KEY: ${{ secrets.NAMECHEAP_SSH_PRIVATE_KEY }}
+          NAMECHEAP_SSH_HOST: ${{ secrets.NAMECHEAP_SSH_HOST }}
+          NAMECHEAP_SSH_PORT: ${{ secrets.NAMECHEAP_SSH_PORT }}
+
+      - name: Deploy to Namecheap
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p $NAMECHEAP_SSH_PORT -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
+            dist/ \
+            "$NAMECHEAP_SSH_USER@$NAMECHEAP_SSH_HOST:~/allstareateries.com/"
+        env:
+          NAMECHEAP_SSH_HOST: ${{ secrets.NAMECHEAP_SSH_HOST }}
+          NAMECHEAP_SSH_PORT: ${{ secrets.NAMECHEAP_SSH_PORT }}
+          NAMECHEAP_SSH_USER: ${{ secrets.NAMECHEAP_SSH_USER }}

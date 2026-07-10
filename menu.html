@@ -20,7 +20,9 @@
 
     <header class="site-header" id="site-header">
       <div class="inner">
-        <a class="logo" href="/">Allstar Eateries</a>
+        <a class="logo" href="/">
+          <img src="/images/logo.png" alt="Allstar Eateries" width="180" height="52" />
+        </a>
         <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
           <span class="sr-only">Open menu</span>
           <span class="nav-toggle-bar"></span>
@@ -49,7 +51,7 @@
       </section>
 
       <nav class="menu-tabs" aria-label="Menu categories">
-        <div class="inner">
+        <div class="inner" id="menu-tabs-inner">
           <a class="menu-tab is-active" href="#drinks">Drinks</a>
           <a class="menu-tab" href="#donuts">Donuts</a>
           <a class="menu-tab" href="#combos">Combos</a>
@@ -58,6 +60,9 @@
         </div>
       </nav>
 
+      <p class="menu-sync-note" id="menu-sync-note" hidden>Menu synced from Clover</p>
+
+      <div id="menu-sections">
       <section id="drinks" class="menu-category section--alt">
         <div class="inner">
           <div class="section-head">
@@ -280,6 +285,7 @@
           </div>
         </div>
       </section>
+      </div>
 
       <section class="menu-cta-band section--dark">
         <div class="inner narrow">
@@ -297,7 +303,9 @@
       <div class="inner">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="logo" href="/">Allstar Eateries</a>
+            <a class="logo" href="/">
+          <img src="/images/logo.png" alt="Allstar Eateries" width="180" height="52" />
+        </a>
             <p>Premium coffee, loaded donuts, and African comfort food in East Windsor.</p>
           </div>
           <div class="footer-col">
@@ -327,6 +335,6 @@
       </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/menu.js"></script>
   </body>
 </html>
