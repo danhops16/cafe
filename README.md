@@ -13,7 +13,7 @@ Copy `.env.example` to `.env` and fill in values for Clover ordering + menu sync
 
 ## Menu sync
 
-The menu page loads from `public/menu-data.json`, generated from Clover POS:
+The menu page loads from `public/menu-data.json`, generated from Clover POS. Item photos use images uploaded in Clover when available, otherwise local fallback photos in `public/images/menu/`.
 
 ```bash
 npm run sync-menu

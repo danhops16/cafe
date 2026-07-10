@@ -75,6 +75,60 @@ function resolveLocalImage(name, images) {
   return null;
 }
 
+const CLOVER_IMAGE_CDN = "https://cloverstatic.com/menu-assets/items";
+const imageExistsCache = new Map();
+
+function cloverImageCandidates(item) {
+  const candidates = [];
+  const imageFilename = item.menuItem?.imageFilename?.trim();
+
+  if (imageFilename) {
+    candidates.push(
+      imageFilename.startsWith("http") ? imageFilename : `${CLOVER_IMAGE_CDN}/${imageFilename}`
+    );
+  }
+
+  if (item.id) {
+    candidates.push(`${CLOVER_IMAGE_CDN}/${item.id}_512x512.jpeg`);
+    candidates.push(`${CLOVER_IMAGE_CDN}/${item.id}_120x120.jpeg`);
+    candidates.push(`${CLOVER_IMAGE_CDN}/${item.id}_1500x1125.jpeg`);
+  }
+
+  return [...new Set(candidates)];
+}
+
+async function cloverImageExists(url) {
+  if (imageExistsCache.has(url)) return imageExistsCache.get(url);
+
+  try {
+    const response = await fetch(url, { method: "HEAD" });
+    const ok = response.ok;
+    imageExistsCache.set(url, ok);
+    return ok;
+  } catch {
+    imageExistsCache.set(url, false);
+    return false;
+  }
+}
+
+async function resolveItemImage(item, localImages) {
+  const imageFilename = item.menuItem?.imageFilename?.trim();
+
+  if (imageFilename) {
+    return imageFilename.startsWith("http")
+      ? imageFilename
+      : `${CLOVER_IMAGE_CDN}/${imageFilename}`;
+  }
+
+  for (const url of cloverImageCandidates(item)) {
+    if (await cloverImageExists(url)) {
+      return url;
+    }
+  }
+
+  return resolveLocalImage(item.name, localImages);
+}
+
 async function fetchJson(url, token) {
   const response = await fetch(url, {
     headers: {
@@ -116,29 +170,34 @@ function formatPrice(cents) {
   return `$${(cents / 100).toFixed(2)}`;
 }
 
-function buildMenuData(categories, images) {
-  const menuCategories = categories
-    .filter((category) => category.name)
+async function buildMenuData(categories, images) {
+  const menuCategories = [];
+
+  for (const [index, category] of categories
+    .filter((entry) => entry.name)
     .sort((a, b) => Number(a.sortOrder ?? 0) - Number(b.sortOrder ?? 0))
-    .map((category, index) => {
-      const items = (category.items?.elements ?? [])
+    .entries()) {
+    const items = await Promise.all(
+      (category.items?.elements ?? [])
         .filter((item) => item.hidden !== true && item.available !== false)
         .sort((a, b) => (a.name ?? "").localeCompare(b.name ?? ""))
-        .map((item) => ({
+        .map(async (item) => ({
           id: item.id,
           name: item.name,
-          description: item.description?.trim() || null,
+          description: item.description?.trim() || item.menuItem?.description?.trim() || null,
           price: formatPrice(item.price),
-          image: resolveLocalImage(item.name, images),
-        }));
+          image: await resolveItemImage(item, images),
+        }))
+    );
 
-      return {
-        id: slugify(category.name) || `category-${index + 1}`,
-        name: category.name,
-        items,
-      };
-    })
-    .filter((category) => category.items.length > 0);
+    if (!items.length) continue;
+
+    menuCategories.push({
+      id: slugify(category.name) || `category-${index + 1}`,
+      name: category.name,
+      items,
+    });
+  }
 
   return {
     source: "clover",
@@ -159,8 +218,8 @@ async function main() {
   }
 
   const images = listMenuImages();
-  const categories = await fetchAllElements(baseUrl, merchantId, "categories", token, "items");
-  const menuData = buildMenuData(categories, images);
+  const categories = await fetchAllElements(baseUrl, merchantId, "categories", token, "items.menuItem");
+  const menuData = await buildMenuData(categories, images);
 
   if (!menuData.categories.length) {
     throw new Error("No menu categories with items were returned from Clover.");
