@@ -1,6 +1,6 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-10T02:11:58.930Z",
+  "updatedAt": "2026-07-10T15:28:13.626Z",
   "categories": [
     {
       "id": "foods",
@@ -25,7 +25,7 @@
           "name": "Chicken Lap",
           "description": null,
           "price": "$5.00",
-          "image": null
+          "image": "/images/menu/chicken-lap.png"
         },
         {
           "id": "SPCN34342YN76",
@@ -80,63 +80,63 @@
           "name": "Apple Fritter",
           "description": null,
           "price": "$2.00",
-          "image": null
+          "image": "/images/menu/apple-fritter.png"
         },
         {
           "id": "HJA47H31BEGHC",
           "name": "Apple Turnover",
           "description": null,
           "price": "$2.50",
-          "image": null
+          "image": "/images/menu/apple-turnover.png"
         },
         {
           "id": "SGNG0SCVGN7FT",
           "name": "Banana Chocolate Chip Muffins",
           "description": null,
           "price": "$2.50",
-          "image": null
+          "image": "/images/menu/banana-chocolate-chip-muffins.png"
         },
         {
           "id": "YEHR79JA4WPRG",
           "name": "Butter Croissants",
           "description": null,
           "price": "$2.00",
-          "image": null
+          "image": "/images/menu/butter-croissants.png"
         },
         {
           "id": "6Z57YTD7TEZRT",
           "name": "Canolli",
           "description": null,
           "price": "$4.00",
-          "image": null
+          "image": "/images/menu/canolli.png"
         },
         {
           "id": "Z3S328YRPQ6M2",
           "name": "Cherry Cheesecake",
           "description": null,
           "price": "$3.54",
-          "image": null
+          "image": "/images/menu/cherry-cheesecake.png"
         },
         {
           "id": "TBM5KT4PS10F2",
           "name": "Honey Cruller",
           "description": null,
           "price": "$2.00",
-          "image": null
+          "image": "/images/menu/honey-cruller.png"
         },
         {
           "id": "CRQP39P2A1YR2",
           "name": "Long John",
           "description": null,
           "price": "$2.00",
-          "image": null
+          "image": "/images/menu/long-john.png"
         },
         {
           "id": "GX27A43EW9VVP",
           "name": "Mango Muffins",
           "description": null,
           "price": "$2.50",
-          "image": null
+          "image": "/images/menu/mango-muffins.png"
         },
         {
           "id": "G0ZSBB43YNMHA",
@@ -150,28 +150,28 @@
           "name": "Old Fashioned Plain",
           "description": null,
           "price": "$2.00",
-          "image": null
+          "image": "/images/menu/old-fashioned-plain.png"
         },
         {
           "id": "MTFHNFQDKTWAE",
           "name": "Raisin Bran Muffins",
           "description": null,
           "price": "$2.50",
-          "image": null
+          "image": "/images/menu/raisin-bran-muffins.png"
         },
         {
           "id": "VQJTXKRY2DX54",
           "name": "Strawberry Cloud",
           "description": null,
           "price": "$3.54",
-          "image": null
+          "image": "/images/menu/strawberry-cloud.png"
         },
         {
           "id": "BJY1G2W3B1VER",
           "name": "Strawberry Muffins",
           "description": null,
           "price": "$2.50",
-          "image": null
+          "image": "/images/menu/strawberry-muffins.png"
         }
       ]
     },
@@ -184,56 +184,56 @@
           "name": "A&W",
           "description": null,
           "price": "$1.50",
-          "image": null
+          "image": "/images/menu/aandw.png"
         },
         {
           "id": "4VZY5W7JE6788",
           "name": "Canada Dry Can",
           "description": null,
           "price": "$1.25",
-          "image": null
+          "image": "/images/menu/canada-dry-can.png"
         },
         {
           "id": "5T7Z3670Z5Z1G",
           "name": "Coca-Cola Can",
           "description": null,
           "price": "$1.25",
-          "image": null
+          "image": "/images/menu/coca-cola-can.png"
         },
         {
           "id": "7CEW4BGBKE26J",
           "name": "Dr Pepper",
           "description": null,
           "price": "$1.50",
-          "image": null
+          "image": "/images/menu/dr-pepper.png"
         },
         {
           "id": "WH076HZXJN3KE",
           "name": "Fanta Orange Can",
           "description": null,
           "price": "$1.25",
-          "image": null
+          "image": "/images/menu/fanta-orange-can.png"
         },
         {
           "id": "3KG47M4AZT106",
           "name": "Mountain Dew Can",
           "description": null,
           "price": "$1.50",
-          "image": null
+          "image": "/images/menu/mountain-dew-can.png"
         },
         {
           "id": "S8P2RR05R6AN2",
           "name": "Pepsi Can",
           "description": null,
           "price": "$1.25",
-          "image": null
+          "image": "/images/menu/pepsi-can.png"
         },
         {
           "id": "FQ90WHH0R2RT8",
           "name": "Sprite Can",
           "description": null,
           "price": "$1.25",
-          "image": null
+          "image": "/images/menu/sprite-can.png"
         }
       ]
     },
@@ -246,63 +246,63 @@
           "name": "7up Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/7up-bottle.png"
         },
         {
           "id": "T6KNAQ8F74AWA",
           "name": "Canadab Dry",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/canadab-dry.png"
         },
         {
           "id": "2CS4TN7FEXXZ2",
           "name": "Coca-Cola Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/coca-cola-bottle.png"
         },
         {
           "id": "BVT36H4A6YQEG",
           "name": "Diet Coke Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/diet-coke-bottle.png"
         },
         {
           "id": "QSSXZ13E7GKK2",
           "name": "Fanta Orange Bottle",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/fanta-orange-bottle.png"
         },
         {
           "id": "ZKNAJN9HZGEEE",
           "name": "G Zero",
           "description": null,
           "price": "$3.25",
-          "image": null
+          "image": "/images/menu/g-zero.png"
         },
         {
           "id": "3MX6CSG9A7WF4",
           "name": "Mountain Dew Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/mountain-dew-bottle.png"
         },
         {
           "id": "WAG854BHN1TD8",
           "name": "Pepsi Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/pepsi-bottle.png"
         },
         {
           "id": "3PZ8SYDND768E",
           "name": "Sprite Bottle",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/sprite-bottle.png"
         }
       ]
     },
@@ -315,56 +315,56 @@
           "name": "5 Hour Energy",
           "description": null,
           "price": "$3.49",
-          "image": null
+          "image": "/images/menu/5-hour-energy.png"
         },
         {
           "id": "27A7CSZPYSYSP",
           "name": "Bang",
           "description": null,
           "price": "$4.55",
-          "image": null
+          "image": "/images/menu/bang.png"
         },
         {
           "id": "F6JB9EAGWXBS6",
           "name": "Celsius",
           "description": null,
           "price": "$4.00",
-          "image": null
+          "image": "/images/menu/celsius.png"
         },
         {
           "id": "AC0WEDK20SGRY",
           "name": "Monster",
           "description": null,
           "price": "$4.00",
-          "image": null
+          "image": "/images/menu/monster.png"
         },
         {
           "id": "AR9ASRXT2EXHR",
           "name": "NOS",
           "description": null,
           "price": "$4.55",
-          "image": null
+          "image": "/images/menu/nos.png"
         },
         {
           "id": "Y04TVAGTP0G56",
           "name": "Prime Energy",
           "description": null,
           "price": "$4.35",
-          "image": null
+          "image": "/images/menu/prime-energy.png"
         },
         {
           "id": "RCHCNZTXYCYD8",
           "name": "Red Bull",
           "description": null,
           "price": "$4.20",
-          "image": null
+          "image": "/images/menu/red-bull.png"
         },
         {
           "id": "3PKJJ0JD2NY2A",
           "name": "Rockstar",
           "description": null,
           "price": "$4.00",
-          "image": null
+          "image": "/images/menu/rockstar.png"
         }
       ]
     },
@@ -377,56 +377,56 @@
           "name": "Aquafina",
           "description": null,
           "price": "$2.29",
-          "image": null
+          "image": "/images/menu/aquafina.png"
         },
         {
           "id": "6R2HY494TKEXC",
           "name": "Aquafina Small",
           "description": null,
           "price": "$1.50",
-          "image": null
+          "image": "/images/menu/aquafina-small.png"
         },
         {
           "id": "375B3Q9M5PGDM",
           "name": "Bottle water",
           "description": null,
           "price": "$3.00",
-          "image": null
+          "image": "/images/menu/bottle-water.png"
         },
         {
           "id": "GWBWF666P4EG4",
           "name": "Eva Water",
           "description": null,
           "price": "$2.49",
-          "image": null
+          "image": "/images/menu/eva-water.png"
         },
         {
           "id": "1HA318FG74KXC",
           "name": "Evian",
           "description": null,
           "price": "$2.30",
-          "image": null
+          "image": "/images/menu/evian.png"
         },
         {
           "id": "R4S81R4J97460",
           "name": "Fiji Water",
           "description": null,
           "price": "$2.45",
-          "image": null
+          "image": "/images/menu/fiji-water.png"
         },
         {
           "id": "1VBAAN8ZR9AAM",
           "name": "Nestle Pure Life",
           "description": null,
           "price": "$2.29",
-          "image": null
+          "image": "/images/menu/nestle-pure-life.png"
         },
         {
           "id": "VFSD8E75XKA4P",
           "name": "Smart Water",
           "description": null,
           "price": "$4.00",
-          "image": null
+          "image": "/images/menu/smart-water.png"
         }
       ]
     },
@@ -446,28 +446,28 @@
           "name": "Cappucinno",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/latte-cappuccino.png"
         },
         {
           "id": "5TQ72477ACPXP",
           "name": "Coffee (original/dark roast)",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/coffee-espresso.png"
         },
         {
           "id": "MVV5CSJ621BJG",
           "name": "Expresso Style",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/coffee-espresso.png"
         },
         {
           "id": "W4E108RR91GRG",
           "name": "French Vanilla",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/allstar-french-vanilla.png"
         },
         {
           "id": "20T82E1SW3864",
@@ -488,21 +488,21 @@
           "name": "Hot Milk Chocolate",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/hot-chocolate.png"
         },
         {
           "id": "XVBKDSXXKF4TJ",
           "name": "Latte",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/latte-cappuccino.png"
         },
         {
           "id": "YV863R4EHC5AG",
           "name": "Mochaccino",
           "description": null,
           "price": null,
-          "image": null
+          "image": "/images/menu/cafe-mocha.png"
         }
       ]
     }
