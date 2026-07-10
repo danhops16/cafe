@@ -71,12 +71,6 @@ async function loadPosMenu() {
 
     const data = await response.json();
     if (data.source !== "clover" || !renderMenu(data)) return;
-
-    const synced = document.getElementById("menu-sync-note");
-    if (synced && data.updatedAt) {
-      synced.hidden = false;
-      synced.textContent = `Menu synced from Clover · updated ${new Date(data.updatedAt).toLocaleString()}`;
-    }
   } catch {
     // Keep the static fallback menu when POS data is unavailable.
   } finally {
