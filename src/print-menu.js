@@ -12,20 +12,32 @@ const SIZE_ALIASES = {
 const SIZE_PREFIX = /^(Extra\s+Large|Large|Medium|Small)\s+/i;
 const SIZE_SUFFIX = /\s+(Extra\s+Large|Large|Medium|Small)$/i;
 
+/** Pack categories onto letter pages — denser, less empty space. */
 const PAGE_PLAN = [
   {
-    title: "Food & Bakery",
-    kicker: "Comfort plates · soups · fresh bakery",
+    title: "Kitchen & Bakery",
+    kicker: "African plates · American favourites · fresh bakery",
     tone: "food",
-    layout: "featured",
-    categories: ["foods", "bakery"],
+    layout: "kitchen",
+    categories: ["african-cuisine", "american-cuisine", "bakery"],
+    gallery: [
+      "/images/menu/jollof-rice-plate.png",
+      "/images/menu/egusi-fufu.png",
+      "/images/menu/buffalo-chicken-nachos.png",
+      "/images/menu/maple-bacon-donut.png",
+    ],
   },
   {
     title: "Hot & Iced",
     kicker: "Coffee, chocolate & flavoured lattes",
     tone: "coffee",
-    layout: "stack",
+    layout: "drinks",
     categories: ["hot-beverages", "flavored-ice-latte"],
+    gallery: [
+      "/images/menu/cafe-mocha.png",
+      "/images/menu/vanilla-iced-latte.png",
+      "/images/menu/hot-chocolate.png",
+    ],
   },
   {
     title: "Cold Drinks",
@@ -33,6 +45,11 @@ const PAGE_PLAN = [
     tone: "chill",
     layout: "tiles",
     categories: ["pops-can", "pops-bottle", "energy-drinks", "bottled-water"],
+    gallery: [
+      "/images/menu/pepsi-can.png",
+      "/images/menu/monster.png",
+      "/images/menu/fiji-water.png",
+    ],
   },
 ];
 
@@ -48,7 +65,10 @@ function normalizeSize(raw) {
   const cleaned = raw.trim().replace(/\s+/g, " ");
   const key = cleaned.toLowerCase().replace(/\s+/g, "-");
   if (SIZE_ALIASES[key]) return SIZE_ALIASES[key];
-  return cleaned.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).replace(/Extra Large/i, "Extra Large");
+  return cleaned
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/Extra Large/i, "Extra Large");
 }
 
 function parseSizedItem(name) {
@@ -103,11 +123,12 @@ function shortName(name) {
     .replace(/,\s*Fried Plantain,\s*Salad\s*&\s*/gi, " · ")
     .replace(/\s*&\s*Swallow/gi, " & swallow")
     .replace(/Crispy Chicken Tender With Cheesy Wedges/gi, "Chicken Tender & Cheesy Wedges")
-    .replace(/Coffee \(original\/dark roast\)/gi, "Coffee (original / dark)")
+    .replace(/Coffee \(original\/dark roast\)/gi, "Coffee (orig. / dark)")
     .replace(/Canadab Dry/gi, "Canada Dry")
     .replace(/Cappucinno/gi, "Cappuccino")
     .replace(/Expresso Style/gi, "Espresso Style")
-    .replace(/Bottle water/gi, "Bottled Water");
+    .replace(/Bottle water/gi, "Bottled Water")
+    .replace(/African cuisine/gi, "African Cuisine");
 }
 
 function renderItemRow(item) {
@@ -142,11 +163,14 @@ function renderMatrix(groups, usedSizes) {
 
 function renderPanel(category, options = {}) {
   const { collapsed, singles, usedSizes } = collapseCategory(category);
-  const listClass = options.gridList ? "pm-list pm-list--grid" : "pm-list";
+  const listClass = ["pm-list", options.gridList ? "pm-list--grid" : "", options.dense ? "pm-list--dense" : ""]
+    .filter(Boolean)
+    .join(" ");
+
   return `
     <section class="pm-panel ${options.panelClass || ""}">
       <header class="pm-panel__head">
-        <h2>${escapeHtml(category.name)}</h2>
+        <h2>${escapeHtml(category.name.replace(/^african cuisine$/i, "African Cuisine"))}</h2>
         <div class="pm-panel__ornament" aria-hidden="true">★</div>
       </header>
       ${renderMatrix(collapsed, usedSizes)}
@@ -155,45 +179,47 @@ function renderPanel(category, options = {}) {
   `;
 }
 
-function renderPage(page, index, total, categoriesById, updatedAt) {
+function renderGallery(urls = []) {
+  if (!urls.length) return "";
+  const narrow = urls.length <= 3 ? "pm-gallery--narrow" : "";
+  return `
+    <div class="pm-gallery ${narrow}" aria-hidden="true">
+      ${urls.map((src) => `<img src="${escapeHtml(src)}" alt="" />`).join("")}
+    </div>
+  `;
+}
+
+function renderPageContent(page, categoriesById) {
   const cats = page.categories.map((id) => categoriesById.get(id)).filter(Boolean);
 
-  let panels = "";
-  if (page.layout === "featured" && cats.length >= 2) {
-    panels = `
-      ${renderPanel(cats[0], { gridList: true, panelClass: "pm-panel--main" })}
-      ${renderPanel(cats[1], { gridList: true, panelClass: "pm-panel--band" })}
+  if (page.layout === "kitchen") {
+    const african = cats.find((c) => c.id === "african-cuisine");
+    const american = cats.find((c) => c.id === "american-cuisine");
+    const bakery = cats.find((c) => c.id === "bakery");
+    return `
+      <div class="pm-kitchen-top">
+        ${african ? renderPanel(african, { dense: true }) : ""}
+        ${american ? renderPanel(american, { dense: true }) : ""}
+      </div>
+      ${bakery ? renderPanel(bakery, { gridList: true, dense: true, panelClass: "pm-panel--band" }) : ""}
     `;
-  } else {
-    panels = cats.map((category) => renderPanel(category)).join("");
   }
 
+  if (page.layout === "drinks") {
+    return cats.map((category) => renderPanel(category, { dense: true })).join("");
+  }
+
+  if (page.layout === "tiles") {
+    return cats.map((category) => renderPanel(category, { dense: true })).join("");
+  }
+
+  return cats.map((category) => renderPanel(category, { dense: true })).join("");
+}
+
+function renderPage(page, index, total, categoriesById, updatedAt) {
   const dateLabel = updatedAt
     ? new Date(updatedAt).toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" })
     : "";
-
-  const gallery =
-    page.layout === "featured"
-      ? `
-      <div class="pm-gallery" aria-hidden="true">
-        <img src="/images/menu/jollof-rice-plate.png" alt="" />
-        <img src="/images/menu/egusi-fufu.png" alt="" />
-        <img src="/images/menu/maple-bacon-donut.png" alt="" />
-        <img src="/images/menu/caramel-iced-latte.png" alt="" />
-      </div>`
-      : page.layout === "stack"
-        ? `
-      <div class="pm-gallery pm-gallery--narrow" aria-hidden="true">
-        <img src="/images/menu/cafe-mocha.png" alt="" />
-        <img src="/images/menu/vanilla-iced-latte.png" alt="" />
-        <img src="/images/menu/hot-chocolate.png" alt="" />
-      </div>`
-        : `
-      <div class="pm-gallery pm-gallery--narrow" aria-hidden="true">
-        <img src="/images/menu/pepsi-can.png" alt="" />
-        <img src="/images/menu/monster.png" alt="" />
-        <img src="/images/menu/fiji-water.png" alt="" />
-      </div>`;
 
   return `
     <article class="pm-page pm-page--${escapeHtml(page.tone)} pm-page--${escapeHtml(page.layout)}">
@@ -216,8 +242,8 @@ function renderPage(page, index, total, categoriesById, updatedAt) {
         </div>
       </header>
 
-      ${gallery}
-      <div class="pm-page__content">${panels}</div>
+      ${renderGallery(page.gallery)}
+      <div class="pm-page__content">${renderPageContent(page, categoriesById)}</div>
 
       <footer class="pm-foot">
         <span>allstareateries.com · Order online for pickup</span>
@@ -241,8 +267,9 @@ function buildPages(menuData) {
       title: "More Menu",
       kicker: "From the kitchen",
       tone: "food",
-      layout: "stack",
+      layout: "tiles",
       categories: leftover,
+      gallery: [],
     });
   }
   return planned;

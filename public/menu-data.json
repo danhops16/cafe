@@ -1,7 +1,48 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-11T05:28:43.597Z",
+  "updatedAt": "2026-07-11T18:07:48.754Z",
   "categories": [
+    {
+      "id": "american-cuisine",
+      "name": "American Cuisine",
+      "items": [
+        {
+          "id": "79GTQDQ08G5JC",
+          "name": "Buffalo Chicken Nachos",
+          "description": null,
+          "price": "$13.50",
+          "image": "/images/menu/buffalo-chicken-nachos.png"
+        },
+        {
+          "id": "A4AAFD4J333SE",
+          "name": "Chicken Lap",
+          "description": null,
+          "price": "$5.00",
+          "image": "/images/menu/chicken-lap.png"
+        },
+        {
+          "id": "SPCN34342YN76",
+          "name": "Chicken Wings",
+          "description": null,
+          "price": "$4.50",
+          "image": "/images/menu/chicken-wings.png"
+        },
+        {
+          "id": "FXXN92SSYG90P",
+          "name": "Crispy Chicken Tender With Cheesy Wedges",
+          "description": null,
+          "price": "$8.99",
+          "image": "/images/menu/chicken-tender-combo.png"
+        },
+        {
+          "id": "GY9V4FS1371A0",
+          "name": "Mexican Beef Nachos",
+          "description": null,
+          "price": "$12.50",
+          "image": "/images/menu/mexican-beef-nachos.png"
+        }
+      ]
+    },
     {
       "id": "flavored-ice-latte",
       "name": "Flavored Ice Latte",
@@ -135,96 +176,6 @@
       ]
     },
     {
-      "id": "foods",
-      "name": "Foods",
-      "items": [
-        {
-          "id": "19TS1Y6EDF7S2",
-          "name": "Assorted Pepper Soup",
-          "description": null,
-          "price": "$12.40",
-          "image": "/images/menu/assorted-pepper-soup.png"
-        },
-        {
-          "id": "RNXB1280D6M4W",
-          "name": "Catfish Pepper Soup",
-          "description": null,
-          "price": "$18.50",
-          "image": "/images/menu/catfish-pepper-soup.png"
-        },
-        {
-          "id": "A4AAFD4J333SE",
-          "name": "Chicken Lap",
-          "description": null,
-          "price": "$5.00",
-          "image": "/images/menu/chicken-lap.png"
-        },
-        {
-          "id": "SPCN34342YN76",
-          "name": "Chicken Wings",
-          "description": null,
-          "price": "$4.50",
-          "image": "/images/menu/chicken-wings.png"
-        },
-        {
-          "id": "FXXN92SSYG90P",
-          "name": "Crispy Chicken Tender With Cheesy Wedges",
-          "description": null,
-          "price": "$8.99",
-          "image": "/images/menu/chicken-tender-combo.png"
-        },
-        {
-          "id": "K0Q6XXGHTFKYA",
-          "name": "Egusi Soup & Swallow",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/egusi-fufu.png"
-        },
-        {
-          "id": "AQC1GKPEJQHMW",
-          "name": "Fried Rice, Fried Plantain, Salad & Chicken",
-          "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/fried-rice-plate.png"
-        },
-        {
-          "id": "77TQY3Z4TY2HE",
-          "name": "Fried Rice, Fried Plantain, Salad & Turkey",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/fried-rice-turkey-plate.png"
-        },
-        {
-          "id": "7AW1J9FN1XSX4",
-          "name": "Fried Turkey Wings",
-          "description": null,
-          "price": "$6.00",
-          "image": "/images/menu/fried-turkey-wings.png"
-        },
-        {
-          "id": "4JBKVSF28C00A",
-          "name": "Jollof Rice Fried Plantain, Salad & Chicken",
-          "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/jollof-rice-plate.png"
-        },
-        {
-          "id": "Y2B2WKNEB2VBM",
-          "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/jollof-rice-turkey-plate.png"
-        },
-        {
-          "id": "VWXYS3JVD0CA0",
-          "name": "Vegetable Soup & Swallow",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/fufu-vegetable-soup.png"
-        }
-      ]
-    },
-    {
       "id": "hot-beverages",
       "name": "Hot Beverages",
       "items": [
@@ -234,6 +185,13 @@
           "description": null,
           "price": "$3.35",
           "image": "/images/menu/cafe-mocha.png"
+        },
+        {
+          "id": "4XAYFK47PKKY2",
+          "name": "Large Cappucinno",
+          "description": null,
+          "price": "$4.19",
+          "image": "/images/menu/latte-cappuccino.png"
         },
         {
           "id": "FJ7S27C7RAJ7M",
@@ -276,6 +234,20 @@
           "description": null,
           "price": "$3.15",
           "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "SRT7TC7BG9TD6",
+          "name": "Large Latte",
+          "description": null,
+          "price": "$4.19",
+          "image": "/images/menu/latte-cappuccino.png"
+        },
+        {
+          "id": "QPBN5697X8EF8",
+          "name": "Large Mochaccino",
+          "description": null,
+          "price": "$4.49",
+          "image": "/images/menu/cafe-mocha.png"
         },
         {
           "id": "0S4HTBFECGGR4",
@@ -521,20 +493,6 @@
           "image": "/images/menu/butter-croissants.png"
         },
         {
-          "id": "6Z57YTD7TEZRT",
-          "name": "Canolli",
-          "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/canolli.png"
-        },
-        {
-          "id": "Z3S328YRPQ6M2",
-          "name": "Cherry Cheesecake",
-          "description": null,
-          "price": "$3.54",
-          "image": "/images/menu/cherry-cheesecake.png"
-        },
-        {
           "id": "TBM5KT4PS10F2",
           "name": "Honey Cruller",
           "description": null,
@@ -666,13 +624,6 @@
           "image": "/images/menu/5-hour-energy.png"
         },
         {
-          "id": "27A7CSZPYSYSP",
-          "name": "Bang",
-          "description": null,
-          "price": "$4.55",
-          "image": "/images/menu/bang.png"
-        },
-        {
           "id": "F6JB9EAGWXBS6",
           "name": "Celsius",
           "description": null,
@@ -775,6 +726,75 @@
           "description": null,
           "price": "$4.00",
           "image": "/images/menu/smart-water.png"
+        }
+      ]
+    },
+    {
+      "id": "african-cuisine",
+      "name": "African cuisine",
+      "items": [
+        {
+          "id": "19TS1Y6EDF7S2",
+          "name": "Assorted Pepper Soup",
+          "description": null,
+          "price": "$12.40",
+          "image": "/images/menu/assorted-pepper-soup.png"
+        },
+        {
+          "id": "RNXB1280D6M4W",
+          "name": "Catfish Pepper Soup",
+          "description": null,
+          "price": "$18.50",
+          "image": "/images/menu/catfish-pepper-soup.png"
+        },
+        {
+          "id": "K0Q6XXGHTFKYA",
+          "name": "Egusi Soup & Swallow",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/egusi-fufu.png"
+        },
+        {
+          "id": "AQC1GKPEJQHMW",
+          "name": "Fried Rice, Fried Plantain, Salad & Chicken",
+          "description": null,
+          "price": "$14.00",
+          "image": "/images/menu/fried-rice-plate.png"
+        },
+        {
+          "id": "77TQY3Z4TY2HE",
+          "name": "Fried Rice, Fried Plantain, Salad & Turkey",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/fried-rice-turkey-plate.png"
+        },
+        {
+          "id": "7AW1J9FN1XSX4",
+          "name": "Fried Turkey Wings",
+          "description": null,
+          "price": "$6.00",
+          "image": "/images/menu/fried-turkey-wings.png"
+        },
+        {
+          "id": "4JBKVSF28C00A",
+          "name": "Jollof Rice Fried Plantain, Salad & Chicken",
+          "description": null,
+          "price": "$14.00",
+          "image": "/images/menu/jollof-rice-plate.png"
+        },
+        {
+          "id": "Y2B2WKNEB2VBM",
+          "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/jollof-rice-turkey-plate.png"
+        },
+        {
+          "id": "VWXYS3JVD0CA0",
+          "name": "Vegetable Soup & Swallow",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/fufu-vegetable-soup.png"
         }
       ]
     }

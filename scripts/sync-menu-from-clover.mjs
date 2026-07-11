@@ -114,8 +114,11 @@ const IMAGE_ALIASES = {
   "large-hot-milk-chocolate": "hot-chocolate",
   "small-cappucinno": "latte-cappuccino",
   "medium-cappucinno": "latte-cappuccino",
+  "large-cappucinno": "latte-cappuccino",
   "small-latte": "latte-cappuccino",
   "medium-latte": "latte-cappuccino",
+  "large-latte": "latte-cappuccino",
+  "large-mochaccino": "cafe-mocha",
 };
 
 function listMenuImages() {
