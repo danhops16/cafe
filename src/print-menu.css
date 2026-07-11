@@ -293,8 +293,9 @@ body {
 }
 
 .pm-panel--band .pm-list--grid {
-  align-content: space-between;
+  align-content: start;
   flex: 1;
+  min-height: 0;
 }
 
 .pm-page--stack .pm-page__content {
@@ -365,9 +366,11 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0;
   flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .pm-item {
