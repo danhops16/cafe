@@ -146,7 +146,8 @@ body {
   gap: 1rem;
   align-items: center;
   padding: 0.55rem 0.65rem 0.65rem;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
+  flex-shrink: 0;
   background: linear-gradient(125deg, #1f120d 0%, #3a241c 48%, #52301f 100%);
   color: #fff8ee;
   box-shadow: 0 10px 24px rgba(36, 20, 14, 0.22);
@@ -230,13 +231,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.35rem;
-  margin: 0 0 0.55rem;
-  height: 1.35in;
+  margin: 0 0 0.45rem;
+  height: 1.15in;
+  flex-shrink: 0;
 }
 
 .pm-gallery--narrow {
   grid-template-columns: repeat(3, 1fr);
-  height: 1.15in;
+  height: 1in;
 }
 
 .pm-gallery img {
@@ -253,12 +255,14 @@ body {
   position: relative;
   z-index: 2;
   min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .pm-page--featured .pm-page__content {
   display: grid;
-  grid-template-rows: 1.35fr 0.9fr;
-  gap: 0.55rem;
+  grid-template-rows: 1.05fr 1fr;
+  gap: 0.45rem;
   flex: 1;
   min-height: 0;
 }
@@ -317,7 +321,8 @@ body {
   flex-direction: column;
   min-height: 0;
   height: 100%;
-  padding: 0.55rem 0.6rem 0.45rem;
+  overflow: hidden;
+  padding: 0.45rem 0.55rem 0.35rem;
   background: rgba(255, 252, 246, 0.88);
   border: 1px solid rgba(36, 20, 14, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
@@ -369,7 +374,7 @@ body {
   display: flex;
   align-items: baseline;
   gap: 0.35rem;
-  padding: 0.18rem 0.1rem;
+  padding: 0.12rem 0.1rem;
 }
 
 .pm-item:nth-child(odd) {
@@ -381,9 +386,9 @@ body {
 .pm-item__name {
   flex: 0 1 auto;
   max-width: 68%;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 650;
-  line-height: 1.22;
+  line-height: 1.2;
   color: var(--ink);
 }
 
@@ -396,7 +401,7 @@ body {
 
 .pm-item__price {
   flex: 0 0 auto;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--tone);
   font-variant-numeric: tabular-nums;
@@ -447,12 +452,13 @@ body {
 
 .pm-foot {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 0.55rem;
-  padding: 0.4rem 0.55rem;
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+  padding: 0.35rem 0.5rem;
   background: rgba(36, 20, 14, 0.06);
   border-top: 1px solid rgba(36, 20, 14, 0.12);
   font-size: 0.68rem;
