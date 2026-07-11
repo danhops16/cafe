@@ -1,6 +1,6 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-11T03:17:15.989Z",
+  "updatedAt": "2026-07-11T05:28:43.597Z",
   "categories": [
     {
       "id": "flavored-ice-latte",
@@ -229,73 +229,192 @@
       "name": "Hot Beverages",
       "items": [
         {
-          "id": "WS2Y30VGXPC9E",
-          "name": "Cafe Mocha",
+          "id": "8XCT9ZHDSB0Z0",
+          "name": "Large Cafe Mocha",
           "description": null,
-          "price": null,
+          "price": "$3.35",
+          "image": "/images/menu/cafe-mocha.png"
+        },
+        {
+          "id": "FJ7S27C7RAJ7M",
+          "name": "Large Coffee (original/dark roast)",
+          "description": null,
+          "price": "$2.45",
+          "image": "/images/menu/coffee-espresso.png"
+        },
+        {
+          "id": "1YR1RJD2ZCZFE",
+          "name": "Large Expresso Style",
+          "description": null,
+          "price": "$2.70",
+          "image": "/images/menu/coffee-espresso.png"
+        },
+        {
+          "id": "B0XZBANNYBGXE",
+          "name": "Large French Vanilla",
+          "description": null,
+          "price": "$3.49",
+          "image": "/images/menu/allstar-french-vanilla.png"
+        },
+        {
+          "id": "FGQ0K0RD74PR2",
+          "name": "Large French Vanilla Coffee",
+          "description": null,
+          "price": "$2.95",
+          "image": "/images/menu/french-vanilla-coffee.png"
+        },
+        {
+          "id": "39JKTXW7AFR6T",
+          "name": "Large Hot Chocolate",
+          "description": null,
+          "price": "$2.75",
+          "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "DP7TNFQ0WVSDC",
+          "name": "Large Hot Milk Chocolate",
+          "description": null,
+          "price": "$3.15",
+          "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "0S4HTBFECGGR4",
+          "name": "Medium Cafe Mocha",
+          "description": null,
+          "price": "$3.05",
+          "image": "/images/menu/cafe-mocha.png"
+        },
+        {
+          "id": "F4BGSBKSMSHX4",
+          "name": "Medium Cappucinno",
+          "description": null,
+          "price": "$3.69",
+          "image": "/images/menu/latte-cappuccino.png"
+        },
+        {
+          "id": "D1D0HAB4DFTMP",
+          "name": "Medium Coffee (original/dark roast)",
+          "description": null,
+          "price": "$2.15",
+          "image": "/images/menu/coffee-espresso.png"
+        },
+        {
+          "id": "NRVHAGHWZH7VT",
+          "name": "Medium Expresso Style",
+          "description": null,
+          "price": "$2.55",
+          "image": "/images/menu/coffee-espresso.png"
+        },
+        {
+          "id": "YP8ZAJGSKM67M",
+          "name": "Medium French Vanilla",
+          "description": null,
+          "price": "$3.19",
+          "image": "/images/menu/allstar-french-vanilla.png"
+        },
+        {
+          "id": "RWBXQX193SWQJ",
+          "name": "Medium French Vanilla Coffee",
+          "description": null,
+          "price": "$2.65",
+          "image": "/images/menu/french-vanilla-coffee.png"
+        },
+        {
+          "id": "404A7BWQ5024E",
+          "name": "Medium Hot Chocolate",
+          "description": null,
+          "price": "$2.45",
+          "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "DYSM325YGG6XW",
+          "name": "Medium Hot Milk Chocolate",
+          "description": null,
+          "price": "$2.85",
+          "image": "/images/menu/hot-chocolate.png"
+        },
+        {
+          "id": "JG3S1DEZEQ8NT",
+          "name": "Medium Latte",
+          "description": null,
+          "price": "$3.69",
+          "image": "/images/menu/latte-cappuccino.png"
+        },
+        {
+          "id": "ZK9JYZMN7ZZWA",
+          "name": "Medium Mochaccino",
+          "description": null,
+          "price": "$3.99",
+          "image": "/images/menu/cafe-mocha.png"
+        },
+        {
+          "id": "WS2Y30VGXPC9E",
+          "name": "Small Cafe Mocha",
+          "description": null,
+          "price": "$2.55",
           "image": "/images/menu/cafe-mocha.png"
         },
         {
           "id": "5E1395WXCM6CR",
-          "name": "Cappucinno",
+          "name": "Small Cappucinno",
           "description": null,
-          "price": null,
+          "price": "$3.19",
           "image": "/images/menu/latte-cappuccino.png"
         },
         {
           "id": "5TQ72477ACPXP",
-          "name": "Coffee (original/dark roast)",
+          "name": "Small Coffee (original/dark roast)",
           "description": null,
-          "price": null,
+          "price": "$1.89",
           "image": "/images/menu/coffee-espresso.png"
         },
         {
           "id": "MVV5CSJ621BJG",
-          "name": "Expresso Style",
+          "name": "Small Expresso Style",
           "description": null,
-          "price": null,
+          "price": "$2.20",
           "image": "/images/menu/coffee-espresso.png"
         },
         {
           "id": "W4E108RR91GRG",
-          "name": "French Vanilla",
+          "name": "Small French Vanilla",
           "description": null,
-          "price": null,
+          "price": "$2.89",
           "image": "/images/menu/allstar-french-vanilla.png"
         },
         {
           "id": "20T82E1SW3864",
-          "name": "French Vanilla Coffee",
+          "name": "Small French Vanilla Coffee",
           "description": null,
-          "price": null,
+          "price": "$2.30",
           "image": "/images/menu/french-vanilla-coffee.png"
         },
         {
           "id": "PY05AF7195VHJ",
-          "name": "Hot Chocolate",
+          "name": "Small Hot Chocolate",
           "description": null,
-          "price": null,
+          "price": "$2.15",
           "image": "/images/menu/hot-chocolate.png"
         },
         {
           "id": "9D2Y8DQ9K6AAC",
-          "name": "Hot Milk Chocolate",
+          "name": "Small Hot Milk Chocolate",
           "description": null,
-          "price": null,
+          "price": "$2.45",
           "image": "/images/menu/hot-chocolate.png"
         },
         {
           "id": "XVBKDSXXKF4TJ",
-          "name": "Latte",
+          "name": "Small Latte",
           "description": null,
-          "price": null,
+          "price": "$3.19",
           "image": "/images/menu/latte-cappuccino.png"
         },
         {
           "id": "YV863R4EHC5AG",
-          "name": "Mochaccino",
+          "name": "Small Mochaccino",
           "description": null,
-          "price": null,
+          "price": "$3.49",
           "image": "/images/menu/cafe-mocha.png"
         }
       ]
@@ -336,7 +455,7 @@
           "id": "QSSXZ13E7GKK2",
           "name": "Fanta Orange Bottle",
           "description": null,
-          "price": null,
+          "price": "$3.00",
           "image": "/images/menu/fanta-orange-bottle.png"
         },
         {
