@@ -15,34 +15,26 @@ const SIZE_SUFFIX = /\s+(Extra\s+Large|Large|Medium|Small)$/i;
 const PAGE_PLAN = [
   {
     title: "Food & Bakery",
-    kicker: "Plates, soups & sweets",
+    kicker: "Comfort plates · soups · fresh bakery",
     tone: "food",
+    layout: "split",
     categories: ["foods", "bakery"],
   },
   {
-    title: "Hot & Iced Drinks",
-    kicker: "Brewed fresh to order",
+    title: "Hot & Iced",
+    kicker: "Coffee, chocolate & flavoured lattes",
     tone: "coffee",
+    layout: "stack",
     categories: ["hot-beverages", "flavored-ice-latte"],
   },
   {
     title: "Cold Drinks",
-    kicker: "Cans, bottles & chillers",
+    kicker: "Pops · energy · bottled water",
     tone: "chill",
+    layout: "tiles",
     categories: ["pops-can", "pops-bottle", "energy-drinks", "bottled-water"],
   },
 ];
-
-const CATEGORY_MARKS = {
-  foods: "Foods",
-  bakery: "Bakery",
-  "hot-beverages": "Hot",
-  "flavored-ice-latte": "Iced",
-  "pops-can": "Cans",
-  "pops-bottle": "Bottles",
-  "energy-drinks": "Energy",
-  "bottled-water": "Water",
-};
 
 function escapeHtml(value) {
   return String(value)
@@ -56,28 +48,18 @@ function normalizeSize(raw) {
   const cleaned = raw.trim().replace(/\s+/g, " ");
   const key = cleaned.toLowerCase().replace(/\s+/g, "-");
   if (SIZE_ALIASES[key]) return SIZE_ALIASES[key];
-
-  const titled = cleaned.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
-  return titled.replace(/Extra Large/i, "Extra Large");
+  return cleaned.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).replace(/Extra Large/i, "Extra Large");
 }
 
 function parseSizedItem(name) {
   const prefix = name.match(SIZE_PREFIX);
   if (prefix) {
-    return {
-      size: normalizeSize(prefix[1]),
-      base: name.slice(prefix[0].length).trim(),
-    };
+    return { size: normalizeSize(prefix[1]), base: name.slice(prefix[0].length).trim() };
   }
-
   const suffix = name.match(SIZE_SUFFIX);
   if (suffix) {
-    return {
-      size: normalizeSize(suffix[1]),
-      base: name.slice(0, -suffix[0].length).trim(),
-    };
+    return { size: normalizeSize(suffix[1]), base: name.slice(0, -suffix[0].length).trim() };
   }
-
   return null;
 }
 
@@ -87,23 +69,13 @@ function collapseCategory(category) {
 
   for (const item of category.items) {
     const sized = parseSizedItem(item.name);
-    if (!sized || !sized.base) {
-      singles.push({
-        name: item.name,
-        price: item.price,
-        description: item.description,
-      });
+    if (!sized?.base) {
+      singles.push({ name: item.name, price: item.price, description: item.description });
       continue;
     }
-
     if (!groups.has(sized.base)) {
-      groups.set(sized.base, {
-        name: sized.base,
-        description: item.description,
-        sizes: {},
-      });
+      groups.set(sized.base, { name: sized.base, description: item.description, sizes: {} });
     }
-
     groups.get(sized.base).sizes[sized.size] = item.price;
   }
 
@@ -122,127 +94,103 @@ function collapseCategory(category) {
 
   collapsed.sort((a, b) => a.name.localeCompare(b.name));
   singles.sort((a, b) => a.name.localeCompare(b.name));
-
   const usedSizes = SIZE_ORDER.filter((size) => collapsed.some((group) => group.sizes[size]));
-
   return { collapsed, singles, usedSizes };
+}
+
+function shortName(name) {
+  return name
+    .replace(/,\s*Fried Plantain,\s*Salad\s*&\s*/gi, " · ")
+    .replace(/\s*&\s*Swallow/gi, " & swallow")
+    .replace(/Crispy Chicken Tender With Cheesy Wedges/gi, "Chicken Tender & Cheesy Wedges")
+    .replace(/Coffee \(original\/dark roast\)/gi, "Coffee (original / dark)")
+    .replace(/Canadab Dry/gi, "Canada Dry")
+    .replace(/Cappucinno/gi, "Cappuccino")
+    .replace(/Expresso Style/gi, "Espresso Style")
+    .replace(/Bottle water/gi, "Bottled Water");
 }
 
 function renderItemRow(item) {
   return `
-    <div class="print-row">
-      <div class="print-row__name">
-        <span>${escapeHtml(item.name)}</span>
-        ${item.description ? `<small>${escapeHtml(item.description)}</small>` : ""}
-      </div>
-      <span class="print-row__dots" aria-hidden="true"></span>
-      <div class="print-row__price">${item.price ? escapeHtml(item.price) : ""}</div>
-    </div>
+    <li class="pm-item">
+      <span class="pm-item__name">${escapeHtml(shortName(item.name))}</span>
+      <span class="pm-item__lead" aria-hidden="true"></span>
+      <span class="pm-item__price">${item.price ? escapeHtml(item.price) : ""}</span>
+    </li>
   `;
 }
 
 function renderMatrix(groups, usedSizes) {
   if (!groups.length) return "";
-
-  const head = usedSizes.map((size) => `<th>${escapeHtml(size)}</th>`).join("");
+  const head = usedSizes.map((size) => `<th>${escapeHtml(size.replace("Extra Large", "XL"))}</th>`).join("");
   const body = groups
     .map((group) => {
       const cells = usedSizes
-        .map((size) => {
-          const price = group.sizes[size];
-          return `<td>${price ? escapeHtml(price) : "<span class=\"print-price-empty\">—</span>"}</td>`;
-        })
+        .map((size) => `<td>${group.sizes[size] ? escapeHtml(group.sizes[size]) : "—"}</td>`)
         .join("");
-      return `
-        <tr>
-          <th scope="row">
-            ${escapeHtml(group.name)}
-            ${group.description ? `<small>${escapeHtml(group.description)}</small>` : ""}
-          </th>
-          ${cells}
-        </tr>
-      `;
+      return `<tr><th scope="row">${escapeHtml(shortName(group.name))}</th>${cells}</tr>`;
     })
     .join("");
 
   return `
-    <table class="print-matrix">
-      <thead>
-        <tr>
-          <th scope="col">Drink</th>
-          ${head}
-        </tr>
-      </thead>
+    <table class="pm-matrix">
+      <thead><tr><th scope="col"></th>${head}</tr></thead>
       <tbody>${body}</tbody>
     </table>
   `;
 }
 
-function renderCategory(category) {
+function renderPanel(category) {
   const { collapsed, singles, usedSizes } = collapseCategory(category);
-  const compact = ["foods", "bakery", "pops-can", "pops-bottle", "energy-drinks", "bottled-water"].includes(
-    category.id
-  );
-  const mark = CATEGORY_MARKS[category.id] || category.name.slice(0, 6);
-
   return `
-    <section class="print-category ${compact ? "print-category--compact" : ""}">
-      <div class="print-category__head">
-        <span class="print-category__mark">${escapeHtml(mark)}</span>
+    <section class="pm-panel">
+      <header class="pm-panel__head">
         <h2>${escapeHtml(category.name)}</h2>
-        <span class="print-category__rule" aria-hidden="true"></span>
-      </div>
+        <div class="pm-panel__ornament" aria-hidden="true">★</div>
+      </header>
       ${renderMatrix(collapsed, usedSizes)}
-      ${
-        singles.length
-          ? `<div class="print-list ${compact ? "print-list--grid" : ""}">${singles.map(renderItemRow).join("")}</div>`
-          : ""
-      }
+      ${singles.length ? `<ul class="pm-list">${singles.map(renderItemRow).join("")}</ul>` : ""}
     </section>
   `;
 }
 
 function renderPage(page, index, total, categoriesById, updatedAt) {
-  const sections = page.categories
+  const panels = page.categories
     .map((id) => categoriesById.get(id))
     .filter(Boolean)
-    .map(renderCategory)
+    .map(renderPanel)
     .join("");
 
   const dateLabel = updatedAt
-    ? new Date(updatedAt).toLocaleDateString("en-CA", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })
+    ? new Date(updatedAt).toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" })
     : "";
 
   return `
-    <article class="print-page print-page--${escapeHtml(page.tone || "food")}" style="--page-i: ${index}">
-      <div class="print-page__frame" aria-hidden="true"></div>
-      <header class="print-page__header">
-        <div class="print-page__brand">
-          <div class="print-page__logo-wrap">
-            <img src="/images/logo.png" alt="All Star Eateries" class="print-page__logo" />
-          </div>
+    <article class="pm-page pm-page--${escapeHtml(page.tone)} pm-page--${escapeHtml(page.layout)}">
+      <div class="pm-page__border" aria-hidden="true"></div>
+
+      <header class="pm-masthead">
+        <div class="pm-masthead__brand">
+          <img src="/images/logo.png" alt="" class="pm-masthead__logo" />
           <div>
-            <p class="print-page__eyebrow">All Star Eateries · Windsor</p>
+            <p class="pm-masthead__eyebrow">All Star Eateries · Windsor, Ontario</p>
             <h1>${escapeHtml(page.title)}</h1>
-            <p class="print-page__kicker">${escapeHtml(page.kicker || "")}</p>
+            <p class="pm-masthead__kicker">${escapeHtml(page.kicker)}</p>
           </div>
         </div>
-        <div class="print-page__meta">
-          <p class="print-page__meta-label">Visit</p>
-          <p>4739 Wyandotte St E</p>
-          <p>Mon–Sat 9:30 AM–10 PM</p>
-          <p>Sun 5:00 PM–10:00 PM</p>
-          <p class="print-page__phone">(519) 944-5534</p>
+        <div class="pm-masthead__visit">
+          <p><strong>4739 Wyandotte St E</strong></p>
+          <p>Mon–Sat 9:30 AM – 10 PM</p>
+          <p>Sun 5:00 PM – 10 PM</p>
+          <p class="pm-masthead__phone">(519) 944-5534</p>
         </div>
       </header>
-      <div class="print-page__body">${sections}</div>
-      <footer class="print-page__footer">
-        <span class="print-page__footer-brand">allstareateries.com · Order online for pickup</span>
-        <span>Page ${index + 1} of ${total}${dateLabel ? ` · Menu as of ${dateLabel}` : ""}</span>
+
+      <div class="pm-page__content">${panels}</div>
+
+      <footer class="pm-foot">
+        <span>allstareateries.com · Order online for pickup</span>
+        <span>Page ${index + 1} / ${total}${dateLabel ? ` · ${dateLabel}` : ""}</span>
       </footer>
     </article>
   `;
@@ -259,13 +207,13 @@ function buildPages(menuData) {
   const leftover = menuData.categories.filter((category) => !used.has(category.id)).map((c) => c.id);
   if (leftover.length) {
     planned.push({
-      title: "More from the Menu",
-      kicker: "Fresh from the POS",
+      title: "More Menu",
+      kicker: "From the kitchen",
       tone: "food",
+      layout: "stack",
       categories: leftover,
     });
   }
-
   return planned;
 }
 
@@ -279,11 +227,9 @@ async function main() {
     const menuData = await response.json();
     const pages = buildPages(menuData);
     const categoriesById = new Map(menuData.categories.map((category) => [category.id, category]));
-
     root.innerHTML = pages
       .map((page, index) => renderPage(page, index, pages.length, categoriesById, menuData.updatedAt))
       .join("");
-
     document.getElementById("print-menu-status")?.remove();
   } catch (error) {
     root.innerHTML = `<p class="print-error">Could not load the menu. ${escapeHtml(error.message)}</p>`;
