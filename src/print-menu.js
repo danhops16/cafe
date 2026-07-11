@@ -15,17 +15,34 @@ const SIZE_SUFFIX = /\s+(Extra\s+Large|Large|Medium|Small)$/i;
 const PAGE_PLAN = [
   {
     title: "Food & Bakery",
+    kicker: "Plates, soups & sweets",
+    tone: "food",
     categories: ["foods", "bakery"],
   },
   {
     title: "Hot & Iced Drinks",
+    kicker: "Brewed fresh to order",
+    tone: "coffee",
     categories: ["hot-beverages", "flavored-ice-latte"],
   },
   {
     title: "Cold Drinks",
+    kicker: "Cans, bottles & chillers",
+    tone: "chill",
     categories: ["pops-can", "pops-bottle", "energy-drinks", "bottled-water"],
   },
 ];
+
+const CATEGORY_MARKS = {
+  foods: "Foods",
+  bakery: "Bakery",
+  "hot-beverages": "Hot",
+  "flavored-ice-latte": "Iced",
+  "pops-can": "Cans",
+  "pops-bottle": "Bottles",
+  "energy-drinks": "Energy",
+  "bottled-water": "Water",
+};
 
 function escapeHtml(value) {
   return String(value)
@@ -93,7 +110,6 @@ function collapseCategory(category) {
   const collapsed = [...groups.values()].filter((group) => Object.keys(group.sizes).length >= 2);
   const collapsedBases = new Set(collapsed.map((group) => group.name));
 
-  // If a "group" only had one size, treat it as a single item with the original name
   for (const [base, group] of groups.entries()) {
     if (collapsedBases.has(base)) continue;
     const size = Object.keys(group.sizes)[0];
@@ -132,7 +148,10 @@ function renderMatrix(groups, usedSizes) {
   const body = groups
     .map((group) => {
       const cells = usedSizes
-        .map((size) => `<td>${group.sizes[size] ? escapeHtml(group.sizes[size]) : "—"}</td>`)
+        .map((size) => {
+          const price = group.sizes[size];
+          return `<td>${price ? `<span class="print-price-chip">${escapeHtml(price)}</span>` : "<span class=\"print-price-empty\">—</span>"}</td>`;
+        })
         .join("");
       return `
         <tr>
@@ -162,10 +181,15 @@ function renderMatrix(groups, usedSizes) {
 function renderCategory(category) {
   const { collapsed, singles, usedSizes } = collapseCategory(category);
   const compact = ["pops-can", "pops-bottle", "energy-drinks", "bottled-water"].includes(category.id);
+  const mark = CATEGORY_MARKS[category.id] || category.name.slice(0, 6);
 
   return `
     <section class="print-category ${compact ? "print-category--compact" : ""}">
-      <h2>${escapeHtml(category.name)}</h2>
+      <div class="print-category__head">
+        <span class="print-category__mark">${escapeHtml(mark)}</span>
+        <h2>${escapeHtml(category.name)}</h2>
+        <span class="print-category__rule" aria-hidden="true"></span>
+      </div>
       ${renderMatrix(collapsed, usedSizes)}
       ${
         singles.length
@@ -192,24 +216,30 @@ function renderPage(page, index, total, categoriesById, updatedAt) {
     : "";
 
   return `
-    <article class="print-page">
+    <article class="print-page print-page--${escapeHtml(page.tone || "food")}" style="--page-i: ${index}">
+      <div class="print-page__frame" aria-hidden="true"></div>
       <header class="print-page__header">
         <div class="print-page__brand">
-          <img src="/images/logo.png" alt="All Star Eateries" class="print-page__logo" />
+          <div class="print-page__logo-wrap">
+            <img src="/images/logo.png" alt="All Star Eateries" class="print-page__logo" />
+          </div>
           <div>
             <p class="print-page__eyebrow">All Star Eateries · Windsor</p>
             <h1>${escapeHtml(page.title)}</h1>
+            <p class="print-page__kicker">${escapeHtml(page.kicker || "")}</p>
           </div>
         </div>
         <div class="print-page__meta">
+          <p class="print-page__meta-label">Visit</p>
           <p>4739 Wyandotte St E</p>
-          <p>Mon–Sat 9:30 AM–10 PM · Sun 5–10 PM</p>
-          <p>(519) 944-5534</p>
+          <p>Mon–Sat 9:30 AM–10 PM</p>
+          <p>Sun 5:00 PM–10:00 PM</p>
+          <p class="print-page__phone">(519) 944-5534</p>
         </div>
       </header>
       <div class="print-page__body">${sections}</div>
       <footer class="print-page__footer">
-        <span>allstareateries.com · Order online for pickup</span>
+        <span class="print-page__footer-brand">allstareateries.com · Order online for pickup</span>
         <span>Page ${index + 1} of ${total}${dateLabel ? ` · Menu as of ${dateLabel}` : ""}</span>
       </footer>
     </article>
@@ -223,11 +253,15 @@ function buildPages(menuData) {
     categories: page.categories.filter((id) => categoriesById.has(id)),
   })).filter((page) => page.categories.length);
 
-  // Any Clover categories not in the plan go onto a final overflow page
   const used = new Set(planned.flatMap((page) => page.categories));
   const leftover = menuData.categories.filter((category) => !used.has(category.id)).map((c) => c.id);
   if (leftover.length) {
-    planned.push({ title: "More from the Menu", categories: leftover });
+    planned.push({
+      title: "More from the Menu",
+      kicker: "Fresh from the POS",
+      tone: "food",
+      categories: leftover,
+    });
   }
 
   return planned;
