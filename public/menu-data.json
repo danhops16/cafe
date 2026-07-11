@@ -1,7 +1,139 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-11T02:39:52.223Z",
+  "updatedAt": "2026-07-11T03:16:59.223Z",
   "categories": [
+    {
+      "id": "flavored-ice-latte",
+      "name": "Flavored Ice Latte",
+      "items": [
+        {
+          "id": "29GBDGVCF4YV8",
+          "name": "Extra Large Iced Caramel Latte",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/caramel-iced-latte.png"
+        },
+        {
+          "id": "QC0VVMMRNNGT2",
+          "name": "Extra Large Iced Chocolate Caramel Latte",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/chocolate-caramel-iced-latte.png"
+        },
+        {
+          "id": "T092VB093WZWJ",
+          "name": "Extra Large Iced Hazelnut Latte",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/hazelnut-iced-latte.png"
+        },
+        {
+          "id": "3TMS4NTQH0JV2",
+          "name": "Extra Large Iced Salted Caramel Latte",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/salted-caramel-iced-latte.png"
+        },
+        {
+          "id": "W757Y0WG1H6NC",
+          "name": "Extra Large Iced Vanilla Latte",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/vanilla-iced-latte.png"
+        },
+        {
+          "id": "39TSV26XXCMEM",
+          "name": "Iced Mocha Extra Large",
+          "description": null,
+          "price": "$4.80",
+          "image": "/images/menu/iced-mocha.png"
+        },
+        {
+          "id": "6VVKGJX9NYAG8",
+          "name": "Iced Mocha Large",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/iced-mocha.png"
+        },
+        {
+          "id": "JMVXNRDM5ZSRE",
+          "name": "Iced Mocha Small",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/iced-mocha.png"
+        },
+        {
+          "id": "Z10WAGC9NXTE0",
+          "name": "Large Iced Caramel Latte",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/caramel-iced-latte.png"
+        },
+        {
+          "id": "85ZG0AHQFJ5CC",
+          "name": "Large Iced Chocolate Caramel Latte",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/chocolate-caramel-iced-latte.png"
+        },
+        {
+          "id": "0144EDSBFGFGW",
+          "name": "Large Iced Hazelnut Latte",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/hazelnut-iced-latte.png"
+        },
+        {
+          "id": "N564FE4V7E7R6",
+          "name": "Large Iced Salted Caramel Latte",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/salted-caramel-iced-latte.png"
+        },
+        {
+          "id": "64CW2V3SXWQ66",
+          "name": "Large Iced Vanilla Latte",
+          "description": null,
+          "price": "$3.90",
+          "image": "/images/menu/vanilla-iced-latte.png"
+        },
+        {
+          "id": "M9FDJJXWHDN46",
+          "name": "Small Iced Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/caramel-iced-latte.png"
+        },
+        {
+          "id": "E0SBA8RW3HPEG",
+          "name": "Small Iced Chocolate Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/chocolate-caramel-iced-latte.png"
+        },
+        {
+          "id": "MGQ3B98ZQPZ5P",
+          "name": "Small Iced Hazelnut Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/hazelnut-iced-latte.png"
+        },
+        {
+          "id": "A34Y5AYMG8KNT",
+          "name": "Small Iced Salted Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/salted-caramel-iced-latte.png"
+        },
+        {
+          "id": "1G6KV9DBPGK0T",
+          "name": "Small Iced Vanilla Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "/images/menu/vanilla-iced-latte.png"
+        }
+      ]
+    },
     {
       "id": "foods",
       "name": "Foods",
@@ -60,14 +192,14 @@
           "name": "Fried Rice, Fried Plantain, Salad & Turkey",
           "description": null,
           "price": "$15.00",
-          "image": null
+          "image": "/images/menu/fried-rice-turkey-plate.png"
         },
         {
           "id": "7AW1J9FN1XSX4",
           "name": "Fried Turkey Wings",
           "description": null,
           "price": "$6.00",
-          "image": null
+          "image": "/images/menu/fried-turkey-wings.png"
         },
         {
           "id": "4JBKVSF28C00A",
@@ -81,7 +213,7 @@
           "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
           "description": null,
           "price": "$15.00",
-          "image": null
+          "image": "/images/menu/jollof-rice-turkey-plate.png"
         },
         {
           "id": "VWXYS3JVD0CA0",
@@ -89,33 +221,6 @@
           "description": null,
           "price": "$15.00",
           "image": "/images/menu/fufu-vegetable-soup.png"
-        }
-      ]
-    },
-    {
-      "id": "flavored-ice-latte",
-      "name": "Flavored Ice Latte",
-      "items": [
-        {
-          "id": "39TSV26XXCMEM",
-          "name": "Iced Mocha Extra Large",
-          "description": null,
-          "price": "$4.80",
-          "image": null
-        },
-        {
-          "id": "6VVKGJX9NYAG8",
-          "name": "Iced Mocha Large",
-          "description": null,
-          "price": "$3.90",
-          "image": null
-        },
-        {
-          "id": "JMVXNRDM5ZSRE",
-          "name": "Iced Mocha Small",
-          "description": null,
-          "price": "$3.10",
-          "image": null
         }
       ]
     },
