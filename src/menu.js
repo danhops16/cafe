@@ -34,14 +34,18 @@ function renderMenu(data) {
 
   if (!tabsContainer || !sectionsContainer || !data?.categories?.length) return false;
 
-  tabsContainer.innerHTML = data.categories
+  const categories = [...data.categories].sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+  );
+
+  tabsContainer.innerHTML = categories
     .map(
       (category, index) =>
         `<a class="menu-tab${index === 0 ? " is-active" : ""}" href="#${escapeHtml(category.id)}">${escapeHtml(category.name)}</a>`
     )
     .join("");
 
-  sectionsContainer.innerHTML = data.categories
+  sectionsContainer.innerHTML = categories
     .map(
       (category, index) => `
         <section id="${escapeHtml(category.id)}" class="menu-category${index % 2 === 0 ? " section--alt" : ""}">
