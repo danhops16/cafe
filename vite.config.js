@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         menu: resolve(__dirname, "menu.html"),
+        printMenu: resolve(__dirname, "print-menu.html"),
       },
     },
   },

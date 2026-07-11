@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Menu | Allstar Eateries</title>
+    <meta
+      name="description"
+      content="Printable multi-page Allstar Eateries menu synced from our Clover POS."
+    />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/print-menu.css" />
+  </head>
+  <body>
+    <div class="print-toolbar">
+      <p class="print-toolbar__hint">
+        Multi-page print menu · synced from Clover · size variants collapsed into price columns
+      </p>
+      <div class="print-toolbar__actions">
+        <a class="btn btn--outline" href="/menu.html">Back to menu</a>
+        <button class="btn" type="button" id="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+
+    <p class="print-status" id="print-menu-status">Loading menu from Clover…</p>
+    <div class="print-sheet" id="print-menu-root"></div>
+
+    <script type="module" src="/src/print-menu.js"></script>
+  </body>
+</html>
