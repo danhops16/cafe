@@ -165,6 +165,29 @@ function renderPage(page, index, total, categoriesById, updatedAt) {
     ? new Date(updatedAt).toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" })
     : "";
 
+  const gallery =
+    page.layout === "split"
+      ? `
+      <div class="pm-gallery" aria-hidden="true">
+        <img src="/images/menu/jollof-rice-plate.png" alt="" />
+        <img src="/images/menu/egusi-fufu.png" alt="" />
+        <img src="/images/menu/maple-bacon-donut.png" alt="" />
+        <img src="/images/menu/caramel-iced-latte.png" alt="" />
+      </div>`
+      : page.layout === "stack"
+        ? `
+      <div class="pm-gallery pm-gallery--narrow" aria-hidden="true">
+        <img src="/images/menu/cafe-mocha.png" alt="" />
+        <img src="/images/menu/vanilla-iced-latte.png" alt="" />
+        <img src="/images/menu/hot-chocolate.png" alt="" />
+      </div>`
+        : `
+      <div class="pm-gallery pm-gallery--narrow" aria-hidden="true">
+        <img src="/images/menu/pepsi-can.png" alt="" />
+        <img src="/images/menu/monster.png" alt="" />
+        <img src="/images/menu/fiji-water.png" alt="" />
+      </div>`;
+
   return `
     <article class="pm-page pm-page--${escapeHtml(page.tone)} pm-page--${escapeHtml(page.layout)}">
       <div class="pm-page__border" aria-hidden="true"></div>
@@ -186,6 +209,7 @@ function renderPage(page, index, total, categoriesById, updatedAt) {
         </div>
       </header>
 
+      ${gallery}
       <div class="pm-page__content">${panels}</div>
 
       <footer class="pm-foot">
