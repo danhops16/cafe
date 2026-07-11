@@ -17,7 +17,7 @@ const PAGE_PLAN = [
     title: "Food & Bakery",
     kicker: "Comfort plates · soups · fresh bakery",
     tone: "food",
-    layout: "split",
+    layout: "featured",
     categories: ["foods", "bakery"],
   },
   {
@@ -140,33 +140,40 @@ function renderMatrix(groups, usedSizes) {
   `;
 }
 
-function renderPanel(category) {
+function renderPanel(category, options = {}) {
   const { collapsed, singles, usedSizes } = collapseCategory(category);
+  const listClass = options.gridList ? "pm-list pm-list--grid" : "pm-list";
   return `
-    <section class="pm-panel">
+    <section class="pm-panel ${options.panelClass || ""}">
       <header class="pm-panel__head">
         <h2>${escapeHtml(category.name)}</h2>
         <div class="pm-panel__ornament" aria-hidden="true">★</div>
       </header>
       ${renderMatrix(collapsed, usedSizes)}
-      ${singles.length ? `<ul class="pm-list">${singles.map(renderItemRow).join("")}</ul>` : ""}
+      ${singles.length ? `<ul class="${listClass}">${singles.map(renderItemRow).join("")}</ul>` : ""}
     </section>
   `;
 }
 
 function renderPage(page, index, total, categoriesById, updatedAt) {
-  const panels = page.categories
-    .map((id) => categoriesById.get(id))
-    .filter(Boolean)
-    .map(renderPanel)
-    .join("");
+  const cats = page.categories.map((id) => categoriesById.get(id)).filter(Boolean);
+
+  let panels = "";
+  if (page.layout === "featured" && cats.length >= 2) {
+    panels = `
+      ${renderPanel(cats[0], { gridList: true, panelClass: "pm-panel--main" })}
+      ${renderPanel(cats[1], { gridList: true, panelClass: "pm-panel--band" })}
+    `;
+  } else {
+    panels = cats.map((category) => renderPanel(category)).join("");
+  }
 
   const dateLabel = updatedAt
     ? new Date(updatedAt).toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" })
     : "";
 
   const gallery =
-    page.layout === "split"
+    page.layout === "featured"
       ? `
       <div class="pm-gallery" aria-hidden="true">
         <img src="/images/menu/jollof-rice-plate.png" alt="" />
