@@ -150,7 +150,7 @@ function renderMatrix(groups, usedSizes) {
       const cells = usedSizes
         .map((size) => {
           const price = group.sizes[size];
-          return `<td>${price ? `<span class="print-price-chip">${escapeHtml(price)}</span>` : "<span class=\"print-price-empty\">—</span>"}</td>`;
+          return `<td>${price ? escapeHtml(price) : "<span class=\"print-price-empty\">—</span>"}</td>`;
         })
         .join("");
       return `
@@ -180,7 +180,9 @@ function renderMatrix(groups, usedSizes) {
 
 function renderCategory(category) {
   const { collapsed, singles, usedSizes } = collapseCategory(category);
-  const compact = ["pops-can", "pops-bottle", "energy-drinks", "bottled-water"].includes(category.id);
+  const compact = ["foods", "bakery", "pops-can", "pops-bottle", "energy-drinks", "bottled-water"].includes(
+    category.id
+  );
   const mark = CATEGORY_MARKS[category.id] || category.name.slice(0, 6);
 
   return `
