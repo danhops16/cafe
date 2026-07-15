@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Print Menu | Allstar Eateries</title>
+    <title>Print Menu | All Star Eateries</title>
     <meta
       name="description"
-      content="Printable multi-page Allstar Eateries menu synced from our Clover POS."
+      content="Printable letter menu for All Star Eateries — synced from Clover POS."
     />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/print-menu.css" />
@@ -20,16 +20,16 @@
   <body>
     <div class="print-toolbar">
       <p class="print-toolbar__hint">
-        Letter menu · Print with Background graphics ON · margins Default/None
+        Letter · Background graphics ON · Margins: None · Synced from Clover
       </p>
       <div class="print-toolbar__actions">
-        <a class="btn btn--outline" href="/menu.html">Back to menu</a>
+        <a class="btn btn--ghost" href="/menu.html">Back to menu</a>
         <button class="btn" type="button" id="print-btn">Print / Save PDF</button>
       </div>
     </div>
 
     <p class="print-status" id="print-menu-status">Loading menu from Clover…</p>
-    <div class="print-sheet" id="print-menu-root"></div>
+    <main class="sheet" id="print-menu-root" aria-live="polite"></main>
 
     <script type="module" src="/src/print-menu.js"></script>
   </body>

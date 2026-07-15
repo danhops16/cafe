@@ -1,4 +1,5 @@
 import { setupOrderLinks, setupHeaderScroll, setupNavToggle, setupMenuTabs } from "./site.js";
+import { displayName, categoryTitle } from "./menu-display.js";
 
 function escapeHtml(value) {
   return value
@@ -9,19 +10,20 @@ function escapeHtml(value) {
 }
 
 function renderMenuItem(item) {
+  const name = displayName(item.name);
   const description = item.description
     ? `<p>${escapeHtml(item.description)}</p>`
     : "";
   const price = item.price ? `<span class="menu-item__price">${escapeHtml(item.price)}</span>` : "";
   const thumb = item.image
-    ? `<div class="menu-item__thumb"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" /></div>`
+    ? `<div class="menu-item__thumb"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(name)}" loading="lazy" /></div>`
     : "";
 
   return `
     <article class="menu-item${thumb ? "" : " menu-item--text-only"}">
       ${thumb}
       <div class="menu-item__content">
-        <div><h3>${escapeHtml(item.name)}</h3>${description}</div>
+        <div><h3>${escapeHtml(name)}</h3>${description}</div>
         ${price}
       </div>
     </article>
@@ -35,13 +37,13 @@ function renderMenu(data) {
   if (!tabsContainer || !sectionsContainer || !data?.categories?.length) return false;
 
   const categories = [...data.categories].sort((a, b) =>
-    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+    categoryTitle(a).localeCompare(categoryTitle(b), undefined, { sensitivity: "base" })
   );
 
   tabsContainer.innerHTML = categories
     .map(
       (category, index) =>
-        `<a class="menu-tab${index === 0 ? " is-active" : ""}" href="#${escapeHtml(category.id)}">${escapeHtml(category.name)}</a>`
+        `<a class="menu-tab${index === 0 ? " is-active" : ""}" href="#${escapeHtml(category.id)}">${escapeHtml(categoryTitle(category))}</a>`
     )
     .join("");
 
@@ -51,7 +53,7 @@ function renderMenu(data) {
         <section id="${escapeHtml(category.id)}" class="menu-category${index % 2 === 0 ? " section--alt" : ""}">
           <div class="inner">
             <div class="section-head">
-              <h2>${escapeHtml(category.name)}</h2>
+              <h2>${escapeHtml(categoryTitle(category))}</h2>
             </div>
             <div class="menu-items">
               ${category.items.map(renderMenuItem).join("")}

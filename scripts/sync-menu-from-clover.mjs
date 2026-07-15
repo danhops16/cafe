@@ -88,6 +88,8 @@ const IMAGE_ALIASES = {
   "iced-mocha-extra-large": "iced-mocha",
   "fried-rice-fried-plantain-salad-and-turkey": "fried-rice-turkey-plate",
   "jollof-rice-fried-plantain-salad-and-turkey": "jollof-rice-turkey-plate",
+  "fried-rice-and-chicken": "fried-rice-and-chicken",
+  "jollof-rice-and-chicken": "jollof-rice-and-chicken",
   "fried-turkey-wings": "fried-turkey-wings",
   "small-cafe-mocha": "cafe-mocha",
   "medium-cafe-mocha": "cafe-mocha",

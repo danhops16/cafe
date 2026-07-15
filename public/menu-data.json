@@ -1,45 +1,301 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-11T18:07:48.754Z",
+  "updatedAt": "2026-07-15T00:40:06.039Z",
   "categories": [
     {
-      "id": "american-cuisine",
-      "name": "American Cuisine",
+      "id": "african-cuisine",
+      "name": "African cuisine",
       "items": [
         {
-          "id": "79GTQDQ08G5JC",
-          "name": "Buffalo Chicken Nachos",
+          "id": "19TS1Y6EDF7S2",
+          "name": "Assorted Pepper Soup",
           "description": null,
-          "price": "$13.50",
-          "image": "/images/menu/buffalo-chicken-nachos.png"
+          "price": "$12.40",
+          "image": "/images/menu/assorted-pepper-soup.png"
         },
         {
-          "id": "A4AAFD4J333SE",
-          "name": "Chicken Lap",
+          "id": "RNXB1280D6M4W",
+          "name": "Catfish Pepper Soup",
           "description": null,
-          "price": "$5.00",
-          "image": "/images/menu/chicken-lap.png"
+          "price": "$18.50",
+          "image": "/images/menu/catfish-pepper-soup.png"
         },
         {
-          "id": "SPCN34342YN76",
-          "name": "Chicken Wings",
+          "id": "K0Q6XXGHTFKYA",
+          "name": "Egusi Soup & Swallow",
           "description": null,
-          "price": "$4.50",
-          "image": "/images/menu/chicken-wings.png"
+          "price": "$15.00",
+          "image": "/images/menu/egusi-fufu.png"
         },
         {
-          "id": "FXXN92SSYG90P",
-          "name": "Crispy Chicken Tender With Cheesy Wedges",
+          "id": "PPSTZ12AH4F0T",
+          "name": "Fried Rice & Chicken",
           "description": null,
-          "price": "$8.99",
-          "image": "/images/menu/chicken-tender-combo.png"
+          "price": "$12.00",
+          "image": "/images/menu/fried-rice-and-chicken.png"
         },
         {
-          "id": "GY9V4FS1371A0",
-          "name": "Mexican Beef Nachos",
+          "id": "AQC1GKPEJQHMW",
+          "name": "Fried Rice, Fried Plantain, Salad & Chicken",
           "description": null,
-          "price": "$12.50",
-          "image": "/images/menu/mexican-beef-nachos.png"
+          "price": "$14.00",
+          "image": "/images/menu/fried-rice-plate.png"
+        },
+        {
+          "id": "77TQY3Z4TY2HE",
+          "name": "Fried Rice, Fried Plantain, Salad & Turkey",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/fried-rice-turkey-plate.png"
+        },
+        {
+          "id": "7AW1J9FN1XSX4",
+          "name": "Fried Turkey Wings",
+          "description": null,
+          "price": "$6.00",
+          "image": "/images/menu/fried-turkey-wings.png"
+        },
+        {
+          "id": "4KDGKHMKTYMQ4",
+          "name": "Jollof Rice & Chicken",
+          "description": null,
+          "price": "$12.00",
+          "image": "/images/menu/jollof-rice-and-chicken.png"
+        },
+        {
+          "id": "4JBKVSF28C00A",
+          "name": "Jollof Rice Fried Plantain, Salad & Chicken",
+          "description": null,
+          "price": "$14.00",
+          "image": "/images/menu/jollof-rice-plate.png"
+        },
+        {
+          "id": "Y2B2WKNEB2VBM",
+          "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/jollof-rice-turkey-plate.png"
+        },
+        {
+          "id": "VWXYS3JVD0CA0",
+          "name": "Vegetable Soup & Swallow",
+          "description": null,
+          "price": "$15.00",
+          "image": "/images/menu/fufu-vegetable-soup.png"
+        }
+      ]
+    },
+    {
+      "id": "bakery",
+      "name": "Bakery",
+      "items": [
+        {
+          "id": "2ANSMG2XD5REG",
+          "name": "Apple Fritter",
+          "description": null,
+          "price": "$2.00",
+          "image": "/images/menu/apple-fritter.png"
+        },
+        {
+          "id": "HJA47H31BEGHC",
+          "name": "Apple Turnover",
+          "description": null,
+          "price": "$2.50",
+          "image": "/images/menu/apple-turnover.png"
+        },
+        {
+          "id": "SGNG0SCVGN7FT",
+          "name": "Banana Chocolate Chip Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": "/images/menu/banana-chocolate-chip-muffins.png"
+        },
+        {
+          "id": "YEHR79JA4WPRG",
+          "name": "Butter Croissants",
+          "description": null,
+          "price": "$2.00",
+          "image": "/images/menu/butter-croissants.png"
+        },
+        {
+          "id": "JXN70P0G6YN9R",
+          "name": "Butter Croissants",
+          "description": null,
+          "price": "$1.25",
+          "image": "/images/menu/butter-croissants.png"
+        },
+        {
+          "id": "TBM5KT4PS10F2",
+          "name": "Honey Cruller",
+          "description": null,
+          "price": "$2.00",
+          "image": "/images/menu/honey-cruller.png"
+        },
+        {
+          "id": "CRQP39P2A1YR2",
+          "name": "Long John",
+          "description": null,
+          "price": "$2.00",
+          "image": "/images/menu/long-john.png"
+        },
+        {
+          "id": "GX27A43EW9VVP",
+          "name": "Mango Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": "/images/menu/mango-muffins.png"
+        },
+        {
+          "id": "G0ZSBB43YNMHA",
+          "name": "Maple Bacon",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/maple-bacon-donut.png"
+        },
+        {
+          "id": "T7FWN6VXQ9W5G",
+          "name": "Old Fashioned Plain",
+          "description": null,
+          "price": "$2.00",
+          "image": "/images/menu/old-fashioned-plain.png"
+        },
+        {
+          "id": "MTFHNFQDKTWAE",
+          "name": "Raisin Bran Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": "/images/menu/raisin-bran-muffins.png"
+        },
+        {
+          "id": "VQJTXKRY2DX54",
+          "name": "Strawberry Cloud",
+          "description": null,
+          "price": "$3.54",
+          "image": "/images/menu/strawberry-cloud.png"
+        },
+        {
+          "id": "BJY1G2W3B1VER",
+          "name": "Strawberry Muffins",
+          "description": null,
+          "price": "$2.50",
+          "image": "/images/menu/strawberry-muffins.png"
+        }
+      ]
+    },
+    {
+      "id": "bottled-water",
+      "name": "Bottled Water",
+      "items": [
+        {
+          "id": "V2RF9VQANGFTG",
+          "name": "Aquafina",
+          "description": null,
+          "price": "$2.29",
+          "image": "/images/menu/aquafina.png"
+        },
+        {
+          "id": "6R2HY494TKEXC",
+          "name": "Aquafina Small",
+          "description": null,
+          "price": "$1.50",
+          "image": "/images/menu/aquafina-small.png"
+        },
+        {
+          "id": "375B3Q9M5PGDM",
+          "name": "Bottle water",
+          "description": null,
+          "price": "$3.00",
+          "image": "/images/menu/bottle-water.png"
+        },
+        {
+          "id": "GWBWF666P4EG4",
+          "name": "Eva Water",
+          "description": null,
+          "price": "$2.49",
+          "image": "/images/menu/eva-water.png"
+        },
+        {
+          "id": "1HA318FG74KXC",
+          "name": "Evian",
+          "description": null,
+          "price": "$2.30",
+          "image": "/images/menu/evian.png"
+        },
+        {
+          "id": "R4S81R4J97460",
+          "name": "Fiji Water",
+          "description": null,
+          "price": "$2.45",
+          "image": "/images/menu/fiji-water.png"
+        },
+        {
+          "id": "1VBAAN8ZR9AAM",
+          "name": "Nestle Pure Life",
+          "description": null,
+          "price": "$2.29",
+          "image": "/images/menu/nestle-pure-life.png"
+        },
+        {
+          "id": "VFSD8E75XKA4P",
+          "name": "Smart Water",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/smart-water.png"
+        }
+      ]
+    },
+    {
+      "id": "energy-drinks",
+      "name": "Energy Drinks",
+      "items": [
+        {
+          "id": "DGTTA2YZXH7ZJ",
+          "name": "5 Hour Energy",
+          "description": null,
+          "price": "$3.49",
+          "image": "/images/menu/5-hour-energy.png"
+        },
+        {
+          "id": "F6JB9EAGWXBS6",
+          "name": "Celsius",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/celsius.png"
+        },
+        {
+          "id": "AC0WEDK20SGRY",
+          "name": "Monster",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/monster.png"
+        },
+        {
+          "id": "AR9ASRXT2EXHR",
+          "name": "NOS",
+          "description": null,
+          "price": "$4.55",
+          "image": "/images/menu/nos.png"
+        },
+        {
+          "id": "Y04TVAGTP0G56",
+          "name": "Prime Energy",
+          "description": null,
+          "price": "$4.35",
+          "image": "/images/menu/prime-energy.png"
+        },
+        {
+          "id": "RCHCNZTXYCYD8",
+          "name": "Red Bull",
+          "description": null,
+          "price": "$4.20",
+          "image": "/images/menu/red-bull.png"
+        },
+        {
+          "id": "3PKJJ0JD2NY2A",
+          "name": "Rockstar",
+          "description": null,
+          "price": "$4.00",
+          "image": "/images/menu/rockstar.png"
         }
       ]
     },
@@ -461,96 +717,6 @@
       ]
     },
     {
-      "id": "bakery",
-      "name": "Bakery",
-      "items": [
-        {
-          "id": "2ANSMG2XD5REG",
-          "name": "Apple Fritter",
-          "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/apple-fritter.png"
-        },
-        {
-          "id": "HJA47H31BEGHC",
-          "name": "Apple Turnover",
-          "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/apple-turnover.png"
-        },
-        {
-          "id": "SGNG0SCVGN7FT",
-          "name": "Banana Chocolate Chip Muffins",
-          "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/banana-chocolate-chip-muffins.png"
-        },
-        {
-          "id": "YEHR79JA4WPRG",
-          "name": "Butter Croissants",
-          "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/butter-croissants.png"
-        },
-        {
-          "id": "TBM5KT4PS10F2",
-          "name": "Honey Cruller",
-          "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/honey-cruller.png"
-        },
-        {
-          "id": "CRQP39P2A1YR2",
-          "name": "Long John",
-          "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/long-john.png"
-        },
-        {
-          "id": "GX27A43EW9VVP",
-          "name": "Mango Muffins",
-          "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/mango-muffins.png"
-        },
-        {
-          "id": "G0ZSBB43YNMHA",
-          "name": "Maple Bacon",
-          "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/maple-bacon-donut.png"
-        },
-        {
-          "id": "T7FWN6VXQ9W5G",
-          "name": "Old Fashioned Plain",
-          "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/old-fashioned-plain.png"
-        },
-        {
-          "id": "MTFHNFQDKTWAE",
-          "name": "Raisin Bran Muffins",
-          "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/raisin-bran-muffins.png"
-        },
-        {
-          "id": "VQJTXKRY2DX54",
-          "name": "Strawberry Cloud",
-          "description": null,
-          "price": "$3.54",
-          "image": "/images/menu/strawberry-cloud.png"
-        },
-        {
-          "id": "BJY1G2W3B1VER",
-          "name": "Strawberry Muffins",
-          "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/strawberry-muffins.png"
-        }
-      ]
-    },
-    {
       "id": "pops-can",
       "name": "Pops Can",
       "items": [
@@ -613,188 +779,43 @@
       ]
     },
     {
-      "id": "energy-drinks",
-      "name": "Energy Drinks",
+      "id": "american-cuisine",
+      "name": "American Cuisine",
       "items": [
         {
-          "id": "DGTTA2YZXH7ZJ",
-          "name": "5 Hour Energy",
+          "id": "79GTQDQ08G5JC",
+          "name": "Buffalo Chicken Nachos",
           "description": null,
-          "price": "$3.49",
-          "image": "/images/menu/5-hour-energy.png"
+          "price": "$13.50",
+          "image": "/images/menu/buffalo-chicken-nachos.png"
         },
         {
-          "id": "F6JB9EAGWXBS6",
-          "name": "Celsius",
+          "id": "A4AAFD4J333SE",
+          "name": "Chicken Lap",
           "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/celsius.png"
+          "price": "$5.00",
+          "image": "/images/menu/chicken-lap.png"
         },
         {
-          "id": "AC0WEDK20SGRY",
-          "name": "Monster",
+          "id": "SPCN34342YN76",
+          "name": "Chicken Wings",
           "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/monster.png"
+          "price": "$4.50",
+          "image": "/images/menu/chicken-wings.png"
         },
         {
-          "id": "AR9ASRXT2EXHR",
-          "name": "NOS",
+          "id": "FXXN92SSYG90P",
+          "name": "Crispy Chicken Tender With Cheesy Wedges",
           "description": null,
-          "price": "$4.55",
-          "image": "/images/menu/nos.png"
+          "price": "$8.99",
+          "image": "/images/menu/chicken-tender-combo.png"
         },
         {
-          "id": "Y04TVAGTP0G56",
-          "name": "Prime Energy",
+          "id": "GY9V4FS1371A0",
+          "name": "Mexican Beef Nachos",
           "description": null,
-          "price": "$4.35",
-          "image": "/images/menu/prime-energy.png"
-        },
-        {
-          "id": "RCHCNZTXYCYD8",
-          "name": "Red Bull",
-          "description": null,
-          "price": "$4.20",
-          "image": "/images/menu/red-bull.png"
-        },
-        {
-          "id": "3PKJJ0JD2NY2A",
-          "name": "Rockstar",
-          "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/rockstar.png"
-        }
-      ]
-    },
-    {
-      "id": "bottled-water",
-      "name": "Bottled Water",
-      "items": [
-        {
-          "id": "V2RF9VQANGFTG",
-          "name": "Aquafina",
-          "description": null,
-          "price": "$2.29",
-          "image": "/images/menu/aquafina.png"
-        },
-        {
-          "id": "6R2HY494TKEXC",
-          "name": "Aquafina Small",
-          "description": null,
-          "price": "$1.50",
-          "image": "/images/menu/aquafina-small.png"
-        },
-        {
-          "id": "375B3Q9M5PGDM",
-          "name": "Bottle water",
-          "description": null,
-          "price": "$3.00",
-          "image": "/images/menu/bottle-water.png"
-        },
-        {
-          "id": "GWBWF666P4EG4",
-          "name": "Eva Water",
-          "description": null,
-          "price": "$2.49",
-          "image": "/images/menu/eva-water.png"
-        },
-        {
-          "id": "1HA318FG74KXC",
-          "name": "Evian",
-          "description": null,
-          "price": "$2.30",
-          "image": "/images/menu/evian.png"
-        },
-        {
-          "id": "R4S81R4J97460",
-          "name": "Fiji Water",
-          "description": null,
-          "price": "$2.45",
-          "image": "/images/menu/fiji-water.png"
-        },
-        {
-          "id": "1VBAAN8ZR9AAM",
-          "name": "Nestle Pure Life",
-          "description": null,
-          "price": "$2.29",
-          "image": "/images/menu/nestle-pure-life.png"
-        },
-        {
-          "id": "VFSD8E75XKA4P",
-          "name": "Smart Water",
-          "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/smart-water.png"
-        }
-      ]
-    },
-    {
-      "id": "african-cuisine",
-      "name": "African cuisine",
-      "items": [
-        {
-          "id": "19TS1Y6EDF7S2",
-          "name": "Assorted Pepper Soup",
-          "description": null,
-          "price": "$12.40",
-          "image": "/images/menu/assorted-pepper-soup.png"
-        },
-        {
-          "id": "RNXB1280D6M4W",
-          "name": "Catfish Pepper Soup",
-          "description": null,
-          "price": "$18.50",
-          "image": "/images/menu/catfish-pepper-soup.png"
-        },
-        {
-          "id": "K0Q6XXGHTFKYA",
-          "name": "Egusi Soup & Swallow",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/egusi-fufu.png"
-        },
-        {
-          "id": "AQC1GKPEJQHMW",
-          "name": "Fried Rice, Fried Plantain, Salad & Chicken",
-          "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/fried-rice-plate.png"
-        },
-        {
-          "id": "77TQY3Z4TY2HE",
-          "name": "Fried Rice, Fried Plantain, Salad & Turkey",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/fried-rice-turkey-plate.png"
-        },
-        {
-          "id": "7AW1J9FN1XSX4",
-          "name": "Fried Turkey Wings",
-          "description": null,
-          "price": "$6.00",
-          "image": "/images/menu/fried-turkey-wings.png"
-        },
-        {
-          "id": "4JBKVSF28C00A",
-          "name": "Jollof Rice Fried Plantain, Salad & Chicken",
-          "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/jollof-rice-plate.png"
-        },
-        {
-          "id": "Y2B2WKNEB2VBM",
-          "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/jollof-rice-turkey-plate.png"
-        },
-        {
-          "id": "VWXYS3JVD0CA0",
-          "name": "Vegetable Soup & Swallow",
-          "description": null,
-          "price": "$15.00",
-          "image": "/images/menu/fufu-vegetable-soup.png"
+          "price": "$12.50",
+          "image": "/images/menu/mexican-beef-nachos.png"
         }
       ]
     }
