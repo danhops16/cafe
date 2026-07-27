@@ -3,11 +3,7 @@
 name: Deploy Cafe (VPS)
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    # Clover/menu refresh every 6 hours (UTC)
-    - cron: "0 */6 * * *"
+  # push/schedule enabled after first successful manual staging deploy
   workflow_dispatch:
 
 concurrency:
