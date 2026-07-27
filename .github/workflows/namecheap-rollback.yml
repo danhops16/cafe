@@ -1,24 +1,28 @@
-name: Sync menu and deploy
+# Manual Namecheap rollback only.
+# Automatic Namecheap deploys are DISABLED so they cannot race the OVH VPS workflow.
+# Public DNS still points at Namecheap until an explicit cutover.
+name: Namecheap rollback (manual)
 
 on:
-  schedule:
-    # Every 6 hours (UTC)
-    - cron: "0 */6 * * *"
-  push:
-    branches: [main]
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type ROLLBACK-NAMECHEAP to confirm'
+        required: true
+        type: string
 
 concurrency:
   group: namecheap-deploy
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    if: ${{ inputs.confirm == 'ROLLBACK-NAMECHEAP' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: "20"
           cache: npm
@@ -44,7 +48,7 @@ jobs:
           NAMECHEAP_SSH_HOST: ${{ secrets.NAMECHEAP_SSH_HOST }}
           NAMECHEAP_SSH_PORT: ${{ secrets.NAMECHEAP_SSH_PORT }}
 
-      - name: Deploy to Namecheap
+      - name: Deploy to Namecheap (rollback target)
         run: |
           rsync -avz --delete \
             -e "ssh -p $NAMECHEAP_SSH_PORT -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \

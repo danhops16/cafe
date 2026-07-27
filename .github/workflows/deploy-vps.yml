@@ -1,0 +1,213 @@
+# Sync Clover menu, build immutable GHCR image, deploy cafe only to OVH VPS.
+# Does NOT change public DNS or public Caddy hosts.
+name: Deploy Cafe (VPS)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Clover/menu refresh every 6 hours (UTC)
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: cafe-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: danhops16/cafe
+
+jobs:
+  test-build-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync Clover menu (secret used only in this step)
+        env:
+          CLOVER_MERCHANT_ID: ${{ secrets.CLOVER_MERCHANT_ID }}
+          CLOVER_API_TOKEN: ${{ secrets.CLOVER_API_TOKEN }}
+          CLOVER_API_BASE: https://api.clover.com
+        run: |
+          set -euo pipefail
+          [[ -n "${CLOVER_MERCHANT_ID}" ]] || { echo "missing CLOVER_MERCHANT_ID"; exit 1; }
+          [[ -n "${CLOVER_API_TOKEN}" ]] || { echo "missing CLOVER_API_TOKEN"; exit 1; }
+          npm run sync-menu
+          # Drop token from this shell after sync; later steps must not rely on it in Docker ARG/ENV
+          unset CLOVER_API_TOKEN
+
+      - name: Validate menu JSON + ordering URL
+        env:
+          VITE_CLOVER_ORDERING_URL: ${{ secrets.VITE_CLOVER_ORDERING_URL }}
+        run: bash scripts/ci/validate-menu.sh
+
+      - name: Vite production build (no Clover token)
+        env:
+          VITE_CLOVER_ORDERING_URL: ${{ secrets.VITE_CLOVER_ORDERING_URL }}
+        run: npx vite build
+
+      - name: Sensitive file / dist scan
+        env:
+          CLOVER_API_TOKEN: ${{ secrets.CLOVER_API_TOKEN }}
+        run: bash scripts/ci/check-sensitive-files.sh
+
+      - name: Compute immutable release id
+        id: meta
+        run: |
+          set -euo pipefail
+          RELEASE="${GITHUB_SHA}-${GITHUB_RUN_ID}"
+          echo "release=${RELEASE}" >> "$GITHUB_OUTPUT"
+          echo "Release id: ${RELEASE}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
+
+      - name: Log in to GHCR
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image (load for smoke test)
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
+        with:
+          context: .
+          push: false
+          load: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.release }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ steps.meta.outputs.release }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/danhops16/cafe
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=cafe-website
+          provenance: false
+
+      - name: Container health smoke test
+        env:
+          CLOVER_API_TOKEN: ${{ secrets.CLOVER_API_TOKEN }}
+          RELEASE: ${{ steps.meta.outputs.release }}
+        run: |
+          set -euo pipefail
+          NAME="cafe-smoke-${GITHUB_SHA:0:8}"
+          IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${RELEASE}"
+          docker run -d --name "$NAME" -p 18080:8080 "$IMAGE"
+          cleanup() { docker rm -f "$NAME" >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+          ok=0
+          for i in $(seq 1 30); do
+            if curl -fsS "http://127.0.0.1:18080/" | grep -q "Allstar Eateries"; then
+              ok=1
+              break
+            fi
+            sleep 2
+          done
+          [[ "$ok" -eq 1 ]] || { docker logs "$NAME" || true; exit 1; }
+          curl -fsS "http://127.0.0.1:18080/menu.html" | grep -qi "menu" || exit 1
+          curl -fsS "http://127.0.0.1:18080/print-menu.html" | grep -qi "print" || exit 1
+          curl -fsS "http://127.0.0.1:18080/menu-data.json" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d.get("categories")'
+          curl -fsS -o /dev/null "http://127.0.0.1:18080/images/order-qr.png"
+          # Ordering URL must be present in built JS/HTML
+          if ! docker exec "$NAME" sh -c 'grep -R --binary-files=text -l "clover.com/online-ordering" /usr/share/nginx/html >/dev/null'; then
+            echo "ERROR: ordering URL missing from image"
+            exit 1
+          fi
+          # Token must not exist in image filesystem
+          if docker exec -e T="$CLOVER_API_TOKEN" "$NAME" sh -c 'grep -R --fixed-strings --binary-files=without-match -l -- "$T" /usr/share/nginx/html >/dev/null 2>&1'; then
+            echo "ERROR: CLOVER_API_TOKEN found in image filesystem"
+            exit 1
+          fi
+          # No .env / source maps
+          if docker exec "$NAME" sh -c 'test -f /usr/share/nginx/html/.env || ls /usr/share/nginx/html/*.map 2>/dev/null | grep -q .'; then
+            echo "ERROR: .env or source maps in image"
+            exit 1
+          fi
+          # Image config must not contain token
+          if docker inspect "$IMAGE" | grep -F -- "$CLOVER_API_TOKEN" >/dev/null 2>&1; then
+            echo "ERROR: token found in image inspect JSON"
+            exit 1
+          fi
+          echo "SMOKE: OK"
+
+      - name: Push immutable image to GHCR
+        id: push
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.release }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ steps.meta.outputs.release }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/danhops16/cafe
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=cafe-website
+          provenance: false
+
+      - name: Record image digest
+        run: |
+          echo "Image tag: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.release }}"
+          echo "Digest: ${{ steps.push.outputs.digest }}"
+
+      - name: Verify VPS host key fingerprint
+        env:
+          VPS_SSH_KNOWN_HOSTS: ${{ secrets.VPS_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          FP=$(ssh-keygen -lf ~/.ssh/known_hosts | awk '{print $2}' | head -1)
+          EXPECT="SHA256:JRY0XdUxv6j640n1/WcpKjKSpVaeWc/aTB/LbFCAueI"
+          echo "Host key fingerprint: $FP"
+          [[ "$FP" == "$EXPECT" ]] || { echo "HOST KEY MISMATCH"; exit 1; }
+
+      - name: Install cafe CI deploy SSH key
+        env:
+          CAFE_DEPLOY_SSH_KEY: ${{ secrets.CAFE_DEPLOY_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$CAFE_DEPLOY_SSH_KEY" > ~/.ssh/cafe_ci
+          chmod 600 ~/.ssh/cafe_ci
+
+      - name: Deploy to VPS (restricted SSH)
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_DEPLOY_USER: ${{ secrets.VPS_DEPLOY_USER }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE: ${{ steps.meta.outputs.release }}
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GHCR_TOKEN" | ssh \
+            -i ~/.ssh/cafe_ci \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            -o BatchMode=yes \
+            -o ConnectTimeout=30 \
+            "${VPS_DEPLOY_USER}@${VPS_HOST}" \
+            "deploy ${RELEASE}"
+
+      - name: Redact local key material
+        if: always()
+        run: rm -f ~/.ssh/cafe_ci

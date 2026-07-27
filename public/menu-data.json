@@ -1,7 +1,27 @@
 {
   "source": "clover",
-  "updatedAt": "2026-07-15T00:40:06.039Z",
+  "updatedAt": "2026-07-27T02:48:24.466Z",
   "categories": [
+    {
+      "id": "american-cuisine",
+      "name": "American Cuisine",
+      "items": [
+        {
+          "id": "A4AAFD4J333SE",
+          "name": "Chicken Lap",
+          "description": null,
+          "price": "$5.00",
+          "image": "/images/menu/chicken-lap.png"
+        },
+        {
+          "id": "FXXN92SSYG90P",
+          "name": "Crispy Chicken Tender With Cheesy Wedges Combo",
+          "description": null,
+          "price": "$8.99",
+          "image": "https://cloverstatic.com/menu-assets/items/FXXN92SSYG90P.jpeg?v=1784256194899"
+        }
+      ]
+    },
     {
       "id": "african-cuisine",
       "name": "African cuisine",
@@ -11,174 +31,216 @@
           "name": "Assorted Pepper Soup",
           "description": null,
           "price": "$12.40",
-          "image": "/images/menu/assorted-pepper-soup.png"
-        },
-        {
-          "id": "RNXB1280D6M4W",
-          "name": "Catfish Pepper Soup",
-          "description": null,
-          "price": "$18.50",
-          "image": "/images/menu/catfish-pepper-soup.png"
+          "image": "https://cloverstatic.com/menu-assets/items/19TS1Y6EDF7S2.jpeg?v=1784242872590"
         },
         {
           "id": "K0Q6XXGHTFKYA",
-          "name": "Egusi Soup & Swallow",
+          "name": "Egusi Soup, Assorted, Protein & Fufu",
           "description": null,
           "price": "$15.00",
-          "image": "/images/menu/egusi-fufu.png"
+          "image": "https://cloverstatic.com/menu-assets/items/K0Q6XXGHTFKYA.jpeg?v=1784674945903"
+        },
+        {
+          "id": "MNZ7BXW4JWSK0",
+          "name": "Fried Mackerel",
+          "description": null,
+          "price": "$5.00",
+          "image": "https://cloverstatic.com/menu-assets/items/MNZ7BXW4JWSK0.jpeg?v=1784243059461"
         },
         {
           "id": "PPSTZ12AH4F0T",
           "name": "Fried Rice & Chicken",
           "description": null,
           "price": "$12.00",
-          "image": "/images/menu/fried-rice-and-chicken.png"
+          "image": "https://cloverstatic.com/menu-assets/items/PPSTZ12AH4F0T.jpeg?v=1784243112993"
         },
         {
           "id": "AQC1GKPEJQHMW",
           "name": "Fried Rice, Fried Plantain, Salad & Chicken",
           "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/fried-rice-plate.png"
+          "price": "$14.99",
+          "image": "https://cloverstatic.com/menu-assets/items/AQC1GKPEJQHMW.jpeg?v=1784243142760"
         },
         {
           "id": "77TQY3Z4TY2HE",
           "name": "Fried Rice, Fried Plantain, Salad & Turkey",
           "description": null,
           "price": "$15.00",
-          "image": "/images/menu/fried-rice-turkey-plate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/77TQY3Z4TY2HE.jpeg?v=1784243197258"
         },
         {
           "id": "7AW1J9FN1XSX4",
           "name": "Fried Turkey Wings",
           "description": null,
           "price": "$6.00",
-          "image": "/images/menu/fried-turkey-wings.png"
+          "image": "https://cloverstatic.com/menu-assets/items/7AW1J9FN1XSX4.jpeg?v=1784243292373"
         },
         {
           "id": "4KDGKHMKTYMQ4",
           "name": "Jollof Rice & Chicken",
           "description": null,
           "price": "$12.00",
-          "image": "/images/menu/jollof-rice-and-chicken.png"
+          "image": "https://cloverstatic.com/menu-assets/items/4KDGKHMKTYMQ4.jpeg?v=1784243345924"
         },
         {
           "id": "4JBKVSF28C00A",
           "name": "Jollof Rice Fried Plantain, Salad & Chicken",
           "description": null,
-          "price": "$14.00",
-          "image": "/images/menu/jollof-rice-plate.png"
+          "price": "$14.99",
+          "image": "https://cloverstatic.com/menu-assets/items/4JBKVSF28C00A.jpeg?v=1784243366236"
         },
         {
           "id": "Y2B2WKNEB2VBM",
           "name": "Jollof Rice, Fried Plantain, Salad & Turkey",
           "description": null,
           "price": "$15.00",
-          "image": "/images/menu/jollof-rice-turkey-plate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/Y2B2WKNEB2VBM.jpeg?v=1784243413701"
         },
         {
           "id": "VWXYS3JVD0CA0",
-          "name": "Vegetable Soup & Swallow",
+          "name": "Vegetable Soup, Assorted, Protein & Fufu",
           "description": null,
           "price": "$15.00",
-          "image": "/images/menu/fufu-vegetable-soup.png"
+          "image": "https://cloverstatic.com/menu-assets/items/VWXYS3JVD0CA0.jpeg?v=1784675065854"
+        },
+        {
+          "id": "6DSQGX8HSK6CM",
+          "name": "White Rice & Assorted Pepper soup",
+          "description": null,
+          "price": "$17.50",
+          "image": "https://cloverstatic.com/menu-assets/items/6DSQGX8HSK6CM.jpeg?v=1784677217454"
         }
       ]
     },
     {
-      "id": "bakery",
-      "name": "Bakery",
+      "id": "flavored-ice-latte",
+      "name": "Flavored Ice Latte",
       "items": [
         {
-          "id": "2ANSMG2XD5REG",
-          "name": "Apple Fritter",
+          "id": "29GBDGVCF4YV8",
+          "name": "Extra Large Iced Caramel Latte",
           "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/apple-fritter.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/29GBDGVCF4YV8.jpeg?v=1784256520645"
         },
         {
-          "id": "HJA47H31BEGHC",
-          "name": "Apple Turnover",
+          "id": "QC0VVMMRNNGT2",
+          "name": "Extra Large Iced Chocolate Caramel Latte",
           "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/apple-turnover.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/QC0VVMMRNNGT2.jpeg?v=1784256552836"
         },
         {
-          "id": "SGNG0SCVGN7FT",
-          "name": "Banana Chocolate Chip Muffins",
+          "id": "T092VB093WZWJ",
+          "name": "Extra Large Iced Hazelnut Latte",
           "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/banana-chocolate-chip-muffins.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/T092VB093WZWJ.jpeg?v=1784256574737"
         },
         {
-          "id": "YEHR79JA4WPRG",
-          "name": "Butter Croissants",
+          "id": "3TMS4NTQH0JV2",
+          "name": "Extra Large Iced Salted Caramel Latte",
           "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/butter-croissants.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/3TMS4NTQH0JV2.jpeg?v=1784256597302"
         },
         {
-          "id": "JXN70P0G6YN9R",
-          "name": "Butter Croissants",
+          "id": "W757Y0WG1H6NC",
+          "name": "Extra Large Iced Vanilla Latte",
           "description": null,
-          "price": "$1.25",
-          "image": "/images/menu/butter-croissants.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/W757Y0WG1H6NC.jpeg?v=1784256620143"
         },
         {
-          "id": "TBM5KT4PS10F2",
-          "name": "Honey Cruller",
+          "id": "39TSV26XXCMEM",
+          "name": "Iced Mocha Extra Large",
           "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/honey-cruller.png"
+          "price": "$4.80",
+          "image": "https://cloverstatic.com/menu-assets/items/39TSV26XXCMEM.jpeg?v=1784256653038"
         },
         {
-          "id": "CRQP39P2A1YR2",
-          "name": "Long John",
+          "id": "6VVKGJX9NYAG8",
+          "name": "Iced Mocha Large",
           "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/long-john.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/6VVKGJX9NYAG8.jpeg?v=1784256676108"
         },
         {
-          "id": "GX27A43EW9VVP",
-          "name": "Mango Muffins",
+          "id": "JMVXNRDM5ZSRE",
+          "name": "Iced Mocha Small",
           "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/mango-muffins.png"
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/JMVXNRDM5ZSRE.jpeg?v=1784256706219"
         },
         {
-          "id": "G0ZSBB43YNMHA",
-          "name": "Maple Bacon",
+          "id": "Z10WAGC9NXTE0",
+          "name": "Large Iced Caramel Latte",
           "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/maple-bacon-donut.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/Z10WAGC9NXTE0.jpeg?v=1784256829674"
         },
         {
-          "id": "T7FWN6VXQ9W5G",
-          "name": "Old Fashioned Plain",
+          "id": "85ZG0AHQFJ5CC",
+          "name": "Large Iced Chocolate Caramel Latte",
           "description": null,
-          "price": "$2.00",
-          "image": "/images/menu/old-fashioned-plain.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/85ZG0AHQFJ5CC.jpeg?v=1784256850326"
         },
         {
-          "id": "MTFHNFQDKTWAE",
-          "name": "Raisin Bran Muffins",
+          "id": "0144EDSBFGFGW",
+          "name": "Large Iced Hazelnut Latte",
           "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/raisin-bran-muffins.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/0144EDSBFGFGW.jpeg?v=1784256873636"
         },
         {
-          "id": "VQJTXKRY2DX54",
-          "name": "Strawberry Cloud",
+          "id": "N564FE4V7E7R6",
+          "name": "Large Iced Salted Caramel Latte",
           "description": null,
-          "price": "$3.54",
-          "image": "/images/menu/strawberry-cloud.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/N564FE4V7E7R6.jpeg?v=1784256983159"
         },
         {
-          "id": "BJY1G2W3B1VER",
-          "name": "Strawberry Muffins",
+          "id": "64CW2V3SXWQ66",
+          "name": "Large Iced Vanilla Latte",
           "description": null,
-          "price": "$2.50",
-          "image": "/images/menu/strawberry-muffins.png"
+          "price": "$3.90",
+          "image": "https://cloverstatic.com/menu-assets/items/64CW2V3SXWQ66.jpeg?v=1784257003988"
+        },
+        {
+          "id": "M9FDJJXWHDN46",
+          "name": "Small Iced Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/M9FDJJXWHDN46.jpeg?v=1784257034966"
+        },
+        {
+          "id": "E0SBA8RW3HPEG",
+          "name": "Small Iced Chocolate Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/E0SBA8RW3HPEG.jpeg?v=1784257053912"
+        },
+        {
+          "id": "MGQ3B98ZQPZ5P",
+          "name": "Small Iced Hazelnut Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/MGQ3B98ZQPZ5P.jpeg?v=1784257074526"
+        },
+        {
+          "id": "A34Y5AYMG8KNT",
+          "name": "Small Iced Salted Caramel Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/A34Y5AYMG8KNT.jpeg?v=1784257098869"
+        },
+        {
+          "id": "1G6KV9DBPGK0T",
+          "name": "Small Iced Vanilla Latte",
+          "description": null,
+          "price": "$3.10",
+          "image": "https://cloverstatic.com/menu-assets/items/1G6KV9DBPGK0T.jpeg?v=1784257115369"
         }
       ]
     },
@@ -190,14 +252,14 @@
           "id": "V2RF9VQANGFTG",
           "name": "Aquafina",
           "description": null,
-          "price": "$2.29",
+          "price": "$2.00",
           "image": "/images/menu/aquafina.png"
         },
         {
           "id": "6R2HY494TKEXC",
           "name": "Aquafina Small",
           "description": null,
-          "price": "$1.50",
+          "price": "$1.25",
           "image": "/images/menu/aquafina-small.png"
         },
         {
@@ -218,14 +280,14 @@
           "id": "1HA318FG74KXC",
           "name": "Evian",
           "description": null,
-          "price": "$2.30",
+          "price": "$2.25",
           "image": "/images/menu/evian.png"
         },
         {
           "id": "R4S81R4J97460",
           "name": "Fiji Water",
           "description": null,
-          "price": "$2.45",
+          "price": "$2.20",
           "image": "/images/menu/fiji-water.png"
         },
         {
@@ -239,7 +301,7 @@
           "id": "VFSD8E75XKA4P",
           "name": "Smart Water",
           "description": null,
-          "price": "$4.00",
+          "price": "$3.00",
           "image": "/images/menu/smart-water.png"
         }
       ]
@@ -249,185 +311,39 @@
       "name": "Energy Drinks",
       "items": [
         {
-          "id": "DGTTA2YZXH7ZJ",
-          "name": "5 Hour Energy",
-          "description": null,
-          "price": "$3.49",
-          "image": "/images/menu/5-hour-energy.png"
-        },
-        {
           "id": "F6JB9EAGWXBS6",
           "name": "Celsius",
           "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/celsius.png"
+          "price": "$3.45",
+          "image": "https://cloverstatic.com/menu-assets/items/F6JB9EAGWXBS6.jpeg?v=1784258646910"
         },
         {
           "id": "AC0WEDK20SGRY",
           "name": "Monster",
           "description": null,
-          "price": "$4.00",
-          "image": "/images/menu/monster.png"
-        },
-        {
-          "id": "AR9ASRXT2EXHR",
-          "name": "NOS",
-          "description": null,
-          "price": "$4.55",
-          "image": "/images/menu/nos.png"
+          "price": "$3.80",
+          "image": "https://cloverstatic.com/menu-assets/items/AC0WEDK20SGRY.jpeg?v=1784258559648"
         },
         {
           "id": "Y04TVAGTP0G56",
           "name": "Prime Energy",
           "description": null,
           "price": "$4.35",
-          "image": "/images/menu/prime-energy.png"
+          "image": "https://cloverstatic.com/menu-assets/items/Y04TVAGTP0G56.jpeg?v=1784258491415"
         },
         {
           "id": "RCHCNZTXYCYD8",
           "name": "Red Bull",
           "description": null,
-          "price": "$4.20",
-          "image": "/images/menu/red-bull.png"
+          "price": "$3.80",
+          "image": "https://cloverstatic.com/menu-assets/items/RCHCNZTXYCYD8.jpeg?v=1784258694643"
         },
         {
           "id": "3PKJJ0JD2NY2A",
           "name": "Rockstar",
           "description": null,
           "price": "$4.00",
-          "image": "/images/menu/rockstar.png"
-        }
-      ]
-    },
-    {
-      "id": "flavored-ice-latte",
-      "name": "Flavored Ice Latte",
-      "items": [
-        {
-          "id": "29GBDGVCF4YV8",
-          "name": "Extra Large Iced Caramel Latte",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/caramel-iced-latte.png"
-        },
-        {
-          "id": "QC0VVMMRNNGT2",
-          "name": "Extra Large Iced Chocolate Caramel Latte",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/chocolate-caramel-iced-latte.png"
-        },
-        {
-          "id": "T092VB093WZWJ",
-          "name": "Extra Large Iced Hazelnut Latte",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/hazelnut-iced-latte.png"
-        },
-        {
-          "id": "3TMS4NTQH0JV2",
-          "name": "Extra Large Iced Salted Caramel Latte",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/salted-caramel-iced-latte.png"
-        },
-        {
-          "id": "W757Y0WG1H6NC",
-          "name": "Extra Large Iced Vanilla Latte",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/vanilla-iced-latte.png"
-        },
-        {
-          "id": "39TSV26XXCMEM",
-          "name": "Iced Mocha Extra Large",
-          "description": null,
-          "price": "$4.80",
-          "image": "/images/menu/iced-mocha.png"
-        },
-        {
-          "id": "6VVKGJX9NYAG8",
-          "name": "Iced Mocha Large",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/iced-mocha.png"
-        },
-        {
-          "id": "JMVXNRDM5ZSRE",
-          "name": "Iced Mocha Small",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/iced-mocha.png"
-        },
-        {
-          "id": "Z10WAGC9NXTE0",
-          "name": "Large Iced Caramel Latte",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/caramel-iced-latte.png"
-        },
-        {
-          "id": "85ZG0AHQFJ5CC",
-          "name": "Large Iced Chocolate Caramel Latte",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/chocolate-caramel-iced-latte.png"
-        },
-        {
-          "id": "0144EDSBFGFGW",
-          "name": "Large Iced Hazelnut Latte",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/hazelnut-iced-latte.png"
-        },
-        {
-          "id": "N564FE4V7E7R6",
-          "name": "Large Iced Salted Caramel Latte",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/salted-caramel-iced-latte.png"
-        },
-        {
-          "id": "64CW2V3SXWQ66",
-          "name": "Large Iced Vanilla Latte",
-          "description": null,
-          "price": "$3.90",
-          "image": "/images/menu/vanilla-iced-latte.png"
-        },
-        {
-          "id": "M9FDJJXWHDN46",
-          "name": "Small Iced Caramel Latte",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/caramel-iced-latte.png"
-        },
-        {
-          "id": "E0SBA8RW3HPEG",
-          "name": "Small Iced Chocolate Caramel Latte",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/chocolate-caramel-iced-latte.png"
-        },
-        {
-          "id": "MGQ3B98ZQPZ5P",
-          "name": "Small Iced Hazelnut Latte",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/hazelnut-iced-latte.png"
-        },
-        {
-          "id": "A34Y5AYMG8KNT",
-          "name": "Small Iced Salted Caramel Latte",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/salted-caramel-iced-latte.png"
-        },
-        {
-          "id": "1G6KV9DBPGK0T",
-          "name": "Small Iced Vanilla Latte",
-          "description": null,
-          "price": "$3.10",
-          "image": "/images/menu/vanilla-iced-latte.png"
+          "image": "https://cloverstatic.com/menu-assets/items/3PKJJ0JD2NY2A.jpeg?v=1784258713501"
         }
       ]
     },
@@ -440,175 +356,175 @@
           "name": "Large Cafe Mocha",
           "description": null,
           "price": "$3.35",
-          "image": "/images/menu/cafe-mocha.png"
+          "image": "https://cloverstatic.com/menu-assets/items/8XCT9ZHDSB0Z0.jpeg?v=1784258201473"
         },
         {
           "id": "4XAYFK47PKKY2",
           "name": "Large Cappucinno",
           "description": null,
           "price": "$4.19",
-          "image": "/images/menu/latte-cappuccino.png"
+          "image": "https://cloverstatic.com/menu-assets/items/4XAYFK47PKKY2.jpeg?v=1784258185320"
         },
         {
           "id": "FJ7S27C7RAJ7M",
           "name": "Large Coffee (original/dark roast)",
           "description": null,
           "price": "$2.45",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/FJ7S27C7RAJ7M.jpeg?v=1784258171726"
         },
         {
           "id": "1YR1RJD2ZCZFE",
           "name": "Large Expresso Style",
           "description": null,
           "price": "$2.70",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/1YR1RJD2ZCZFE.jpeg?v=1784258154300"
         },
         {
           "id": "B0XZBANNYBGXE",
           "name": "Large French Vanilla",
           "description": null,
           "price": "$3.49",
-          "image": "/images/menu/allstar-french-vanilla.png"
+          "image": "https://cloverstatic.com/menu-assets/items/B0XZBANNYBGXE.jpeg?v=1784258137454"
         },
         {
           "id": "FGQ0K0RD74PR2",
           "name": "Large French Vanilla Coffee",
           "description": null,
           "price": "$2.95",
-          "image": "/images/menu/french-vanilla-coffee.png"
+          "image": "https://cloverstatic.com/menu-assets/items/FGQ0K0RD74PR2.jpeg?v=1784258118075"
         },
         {
           "id": "39JKTXW7AFR6T",
           "name": "Large Hot Chocolate",
           "description": null,
           "price": "$2.75",
-          "image": "/images/menu/hot-chocolate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/39JKTXW7AFR6T.jpeg?v=1784258095972"
         },
         {
           "id": "DP7TNFQ0WVSDC",
           "name": "Large Hot Milk Chocolate",
           "description": null,
           "price": "$3.15",
-          "image": "/images/menu/hot-chocolate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/DP7TNFQ0WVSDC.jpeg?v=1784258060707"
         },
         {
           "id": "SRT7TC7BG9TD6",
           "name": "Large Latte",
           "description": null,
           "price": "$4.19",
-          "image": "/images/menu/latte-cappuccino.png"
+          "image": "https://cloverstatic.com/menu-assets/items/SRT7TC7BG9TD6.jpeg?v=1784258036355"
         },
         {
           "id": "QPBN5697X8EF8",
           "name": "Large Mochaccino",
           "description": null,
           "price": "$4.49",
-          "image": "/images/menu/cafe-mocha.png"
+          "image": "https://cloverstatic.com/menu-assets/items/QPBN5697X8EF8.jpeg?v=1784258011514"
         },
         {
           "id": "0S4HTBFECGGR4",
           "name": "Medium Cafe Mocha",
           "description": null,
           "price": "$3.05",
-          "image": "/images/menu/cafe-mocha.png"
+          "image": "https://cloverstatic.com/menu-assets/items/0S4HTBFECGGR4.jpeg?v=1784257983343"
         },
         {
           "id": "F4BGSBKSMSHX4",
           "name": "Medium Cappucinno",
           "description": null,
           "price": "$3.69",
-          "image": "/images/menu/latte-cappuccino.png"
+          "image": "https://cloverstatic.com/menu-assets/items/F4BGSBKSMSHX4.jpeg?v=1784257960767"
         },
         {
           "id": "D1D0HAB4DFTMP",
           "name": "Medium Coffee (original/dark roast)",
           "description": null,
           "price": "$2.15",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/D1D0HAB4DFTMP.jpeg?v=1784257940982"
         },
         {
           "id": "NRVHAGHWZH7VT",
           "name": "Medium Expresso Style",
           "description": null,
           "price": "$2.55",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/NRVHAGHWZH7VT.jpeg?v=1784257915588"
         },
         {
           "id": "YP8ZAJGSKM67M",
           "name": "Medium French Vanilla",
           "description": null,
           "price": "$3.19",
-          "image": "/images/menu/allstar-french-vanilla.png"
+          "image": "https://cloverstatic.com/menu-assets/items/YP8ZAJGSKM67M.jpeg?v=1784257896265"
         },
         {
           "id": "RWBXQX193SWQJ",
           "name": "Medium French Vanilla Coffee",
           "description": null,
           "price": "$2.65",
-          "image": "/images/menu/french-vanilla-coffee.png"
+          "image": "https://cloverstatic.com/menu-assets/items/RWBXQX193SWQJ.jpeg?v=1784257878317"
         },
         {
           "id": "404A7BWQ5024E",
           "name": "Medium Hot Chocolate",
           "description": null,
           "price": "$2.45",
-          "image": "/images/menu/hot-chocolate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/404A7BWQ5024E.jpeg?v=1784257858012"
         },
         {
           "id": "DYSM325YGG6XW",
           "name": "Medium Hot Milk Chocolate",
           "description": null,
           "price": "$2.85",
-          "image": "/images/menu/hot-chocolate.png"
+          "image": "https://cloverstatic.com/menu-assets/items/DYSM325YGG6XW.jpeg?v=1784257840737"
         },
         {
           "id": "JG3S1DEZEQ8NT",
           "name": "Medium Latte",
           "description": null,
           "price": "$3.69",
-          "image": "/images/menu/latte-cappuccino.png"
+          "image": "https://cloverstatic.com/menu-assets/items/JG3S1DEZEQ8NT.jpeg?v=1784257815792"
         },
         {
           "id": "ZK9JYZMN7ZZWA",
           "name": "Medium Mochaccino",
           "description": null,
           "price": "$3.99",
-          "image": "/images/menu/cafe-mocha.png"
+          "image": "https://cloverstatic.com/menu-assets/items/ZK9JYZMN7ZZWA.jpeg?v=1784257802202"
         },
         {
           "id": "WS2Y30VGXPC9E",
           "name": "Small Cafe Mocha",
           "description": null,
           "price": "$2.55",
-          "image": "/images/menu/cafe-mocha.png"
+          "image": "https://cloverstatic.com/menu-assets/items/WS2Y30VGXPC9E.jpeg?v=1784257767958"
         },
         {
           "id": "5E1395WXCM6CR",
           "name": "Small Cappucinno",
           "description": null,
           "price": "$3.19",
-          "image": "/images/menu/latte-cappuccino.png"
+          "image": "https://cloverstatic.com/menu-assets/items/5E1395WXCM6CR.jpeg?v=1784257742498"
         },
         {
           "id": "5TQ72477ACPXP",
           "name": "Small Coffee (original/dark roast)",
           "description": null,
           "price": "$1.89",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/5TQ72477ACPXP.jpeg?v=1784257721708"
         },
         {
           "id": "MVV5CSJ621BJG",
           "name": "Small Expresso Style",
           "description": null,
           "price": "$2.20",
-          "image": "/images/menu/coffee-espresso.png"
+          "image": "https://cloverstatic.com/menu-assets/items/MVV5CSJ621BJG.jpeg?v=1784257693865"
         },
         {
           "id": "W4E108RR91GRG",
           "name": "Small French Vanilla",
           "description": null,
           "price": "$2.89",
-          "image": "/images/menu/allstar-french-vanilla.png"
+          "image": "https://cloverstatic.com/menu-assets/items/W4E108RR91GRG.jpeg?v=1784257645004"
         },
         {
           "id": "20T82E1SW3864",
@@ -655,63 +571,63 @@
           "id": "N3ZSAQWDXT9JP",
           "name": "7up Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/7up-bottle.png"
         },
         {
           "id": "T6KNAQ8F74AWA",
-          "name": "Canadab Dry",
+          "name": "Canada Dry",
           "description": null,
-          "price": "$3.00",
-          "image": "/images/menu/canadab-dry.png"
+          "price": "$2.25",
+          "image": null
         },
         {
           "id": "2CS4TN7FEXXZ2",
           "name": "Coca-Cola Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/coca-cola-bottle.png"
         },
         {
           "id": "BVT36H4A6YQEG",
           "name": "Diet Coke Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/diet-coke-bottle.png"
         },
         {
           "id": "QSSXZ13E7GKK2",
           "name": "Fanta Orange Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/fanta-orange-bottle.png"
         },
         {
           "id": "ZKNAJN9HZGEEE",
           "name": "G Zero",
           "description": null,
-          "price": "$3.25",
+          "price": "$2.00",
           "image": "/images/menu/g-zero.png"
         },
         {
           "id": "3MX6CSG9A7WF4",
           "name": "Mountain Dew Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/mountain-dew-bottle.png"
         },
         {
           "id": "WAG854BHN1TD8",
           "name": "Pepsi Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/pepsi-bottle.png"
         },
         {
           "id": "3PZ8SYDND768E",
           "name": "Sprite Bottle",
           "description": null,
-          "price": "$3.00",
+          "price": "$2.25",
           "image": "/images/menu/sprite-bottle.png"
         }
       ]
@@ -775,47 +691,6 @@
           "description": null,
           "price": "$1.25",
           "image": "/images/menu/sprite-can.png"
-        }
-      ]
-    },
-    {
-      "id": "american-cuisine",
-      "name": "American Cuisine",
-      "items": [
-        {
-          "id": "79GTQDQ08G5JC",
-          "name": "Buffalo Chicken Nachos",
-          "description": null,
-          "price": "$13.50",
-          "image": "/images/menu/buffalo-chicken-nachos.png"
-        },
-        {
-          "id": "A4AAFD4J333SE",
-          "name": "Chicken Lap",
-          "description": null,
-          "price": "$5.00",
-          "image": "/images/menu/chicken-lap.png"
-        },
-        {
-          "id": "SPCN34342YN76",
-          "name": "Chicken Wings",
-          "description": null,
-          "price": "$4.50",
-          "image": "/images/menu/chicken-wings.png"
-        },
-        {
-          "id": "FXXN92SSYG90P",
-          "name": "Crispy Chicken Tender With Cheesy Wedges",
-          "description": null,
-          "price": "$8.99",
-          "image": "/images/menu/chicken-tender-combo.png"
-        },
-        {
-          "id": "GY9V4FS1371A0",
-          "name": "Mexican Beef Nachos",
-          "description": null,
-          "price": "$12.50",
-          "image": "/images/menu/mexican-beef-nachos.png"
         }
       ]
     }
