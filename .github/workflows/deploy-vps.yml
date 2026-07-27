@@ -109,43 +109,56 @@ jobs:
           docker run -d --name "$NAME" -p 18080:8080 "$IMAGE"
           cleanup() { docker rm -f "$NAME" >/dev/null 2>&1 || true; }
           trap cleanup EXIT
+
           ok=0
           for i in $(seq 1 30); do
-            if curl -fsS "http://127.0.0.1:18080/" | grep -q "Allstar Eateries"; then
-              ok=1
-              break
+            if body="$(curl -fsS "http://127.0.0.1:18080/" 2>/dev/null || true)"; then
+              if printf '%s' "$body" | grep -q "Allstar Eateries"; then
+                ok=1
+                break
+              fi
             fi
             sleep 2
           done
-          [[ "$ok" -eq 1 ]] || { docker logs "$NAME" || true; exit 1; }
-          curl -fsS "http://127.0.0.1:18080/menu.html" | grep -qi "menu" || exit 1
-          curl -fsS "http://127.0.0.1:18080/print-menu.html" | grep -qi "print" || exit 1
+          if [[ "$ok" -ne 1 ]]; then
+            echo "ERROR: homepage never became ready"
+            docker logs "$NAME" || true
+            exit 1
+          fi
+
+          curl -fsS "http://127.0.0.1:18080/menu.html" | grep -qi "menu"
+          curl -fsS "http://127.0.0.1:18080/print-menu.html" | grep -qi "print"
           curl -fsS "http://127.0.0.1:18080/menu-data.json" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d.get("categories")'
           curl -fsS -o /dev/null "http://127.0.0.1:18080/images/order-qr.png"
-          # Ordering URL must be present in built JS/HTML (BusyBox grep: no --binary-files)
-          if ! docker exec "$NAME" sh -c 'grep -R -F -l "clover.com/online-ordering" /usr/share/nginx/html >/dev/null 2>&1'; then
+
+          # Ordering URL in built assets (BusyBox: -a treats JS as text)
+          if ! docker exec "$NAME" sh -c 'grep -R -a -F -l "clover.com/online-ordering" /usr/share/nginx/html >/dev/null 2>&1'; then
             echo "ERROR: ordering URL missing from image"
+            docker exec "$NAME" sh -c 'ls -la /usr/share/nginx/html /usr/share/nginx/html/assets | head -50' || true
             exit 1
           fi
+
           # Token must not exist in image filesystem
-          if docker exec -e T="$CLOVER_API_TOKEN" "$NAME" sh -c 'grep -R -F -l -- "$T" /usr/share/nginx/html >/dev/null 2>&1'; then
-            echo "ERROR: CLOVER_API_TOKEN found in image filesystem"
-            exit 1
+          if [[ -n "${CLOVER_API_TOKEN}" ]]; then
+            if docker exec -e T="$CLOVER_API_TOKEN" "$NAME" sh -c 'grep -R -a -F -l -- "$T" /usr/share/nginx/html >/dev/null 2>&1'; then
+              echo "ERROR: CLOVER_API_TOKEN found in image filesystem"
+              exit 1
+            fi
+            if docker inspect "$IMAGE" | grep -F -- "$CLOVER_API_TOKEN" >/dev/null 2>&1; then
+              echo "ERROR: token found in image inspect JSON"
+              exit 1
+            fi
           fi
-          # No .env / source maps
+
           if docker exec "$NAME" sh -c 'test -f /usr/share/nginx/html/.env'; then
             echo "ERROR: .env in image"
             exit 1
           fi
-          if docker exec "$NAME" sh -c 'find /usr/share/nginx/html -name "*.map" | grep -q .'; then
+          if docker exec "$NAME" sh -c 'find /usr/share/nginx/html -name "*.map" -print | grep -q .'; then
             echo "ERROR: source maps in image"
             exit 1
           fi
-          # Image config must not contain token
-          if docker inspect "$IMAGE" | grep -F -- "$CLOVER_API_TOKEN" >/dev/null 2>&1; then
-            echo "ERROR: token found in image inspect JSON"
-            exit 1
-          fi
+
           echo "SMOKE: OK"
 
       - name: Push immutable image to GHCR
